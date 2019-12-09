@@ -1,20 +1,12 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://assets/adventurer-v1.5-Sheet.png" type="Texture" id=1]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10, 14.8336 )
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Level.tscn" type="PackedScene" id=2]
 
 [node name="World" type="Node2D"]
 
-[node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 113.669, 59.6475 )
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 133.633, 133.498 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( -1.46, 2.7 )
-shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="Player"]
-texture = ExtResource( 1 )
-vframes = 16
-hframes = 7
+[node name="Level" parent="." instance=ExtResource( 2 )]
+position = Vector2( 9.46242, 53.686 )
