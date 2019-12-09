@@ -2,11 +2,9 @@ extends Actor
 
 func _physics_process(delta):
 	
-	# Interrupting jump
-	var is_jump_interrupted = Input.is_action_just_released("jump") and velocity.y < 0.0
 	
 	var direction = get_direction()
-	velocity = calculcate_move_velocity(velocity, direction, speed, is_jump_interrupted)
+	velocity = calculcate_move_velocity(velocity, direction, speed)
 	velocity = move_and_slide(velocity, FLOOR_NORMAL)
 	print (is_on_floor())
 	
@@ -19,17 +17,13 @@ func get_direction():
 func calculcate_move_velocity(
 		linear_velocity: Vector2,
 		direction: Vector2,
-		speed: Vector2,
-		is_jump_interrupted: bool
+		speed: Vector2
 	) -> Vector2:
 	var new_velocity = linear_velocity
 	new_velocity.x = speed.x * direction.x
 	new_velocity.y += gravity * get_physics_process_delta_time()
 	if direction.y == -1.0:
 		new_velocity.y = speed.y * direction.y
-	# Interrupting jumo
-	if is_jump_interrupted:
-		new_velocity.y = 0.0
 	return new_velocity
 
 
