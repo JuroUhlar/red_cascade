@@ -11,6 +11,11 @@ func _physics_process(delta):
 	var direction = get_direction()
 	_velocity = calculcate_move_velocity(_velocity, direction, speed)
 	_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
+	
+	if Input.is_action_pressed("move_left"):
+		$Sprite.flip_h = true
+	if Input.is_action_pressed("move_right"):
+		$Sprite.flip_h = false
 
 	# Grounded jump tolearance 
 	if Input.is_action_just_pressed("jump"):
