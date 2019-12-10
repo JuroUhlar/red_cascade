@@ -13,6 +13,7 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+speed = Vector2( 200, 550 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -22,3 +23,7 @@ position = Vector2( 1, -3 )
 texture = ExtResource( 2 )
 vframes = 16
 hframes = 7
+
+[node name="grounded_tolerance_timer" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true
