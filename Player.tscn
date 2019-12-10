@@ -1,13 +1,36 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/adventurer-v1.5-Sheet.png" type="Texture" id=2]
+[ext_resource path="res://assets/whitePixel.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9, 15 )
 
+[sub_resource type="Gradient" id=6]
+colors = PoolColorArray( 1, 1, 1, 0.717647, 1, 1, 1, 0.270588 )
+
+[sub_resource type="GradientTexture" id=7]
+gradient = SubResource( 6 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.5, 0.4824 ), -2.92171, -2.92171, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=2]
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale_curve = SubResource( 5 )
+color_ramp = SubResource( 7 )
+
+[sub_resource type="ImageTexture" id=3]
+
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 119, 71 )
+position = Vector2( 100, 86 )
 collision_mask = 8
 script = ExtResource( 1 )
 __meta__ = {
@@ -37,9 +60,18 @@ wait_time = 0.15
 one_shot = true
 
 [node name="dash_cooldown" type="Timer" parent="."]
-wait_time = 0.5
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+
+[node name="trail" type="Particles2D" parent="."]
+show_behind_parent = true
+emitting = false
+amount = 16
+speed_scale = 2.0
+local_coords = false
+process_material = SubResource( 2 )
+texture = ExtResource( 3 )
+normal_map = SubResource( 3 )
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]

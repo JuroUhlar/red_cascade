@@ -3,6 +3,8 @@ extends Actor
 onready var grounded_tolerance_timer = get_node("grounded_tolerance_timer")
 onready var jump_trigger_tolerance_timer = get_node("jump_trigger_tolerance_timer")
 
+export var dash_speed_multiplier = 3.0
+
 var can_jump = true
 var grounded_last_frame
 var dashing = false
@@ -11,9 +13,9 @@ func _physics_process(delta):
 	
 	if(dashing):
 		var direction = Vector2(1.0,0.0) if ($Sprite.flip_h == false) else Vector2(-1.0,0)
-		_velocity = move_and_slide(Vector2(direction.x * speed.x * 2,0), FLOOR_NORMAL)
+		_velocity = move_and_slide(Vector2(direction.x * speed.x * dash_speed_multiplier,0), FLOOR_NORMAL)
+		$trail.emitting = true
 	else:
-	
 		var direction = get_direction()
 		_velocity = calculcate_move_velocity(_velocity, direction, speed)
 		_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
@@ -27,8 +29,6 @@ func _physics_process(delta):
 			dashing = true
 			$dash_timer.start()
 			
-		
-	
 		# Grounded jump tolearance 
 		if Input.is_action_just_pressed("jump"):
 			can_jump = false;
@@ -75,5 +75,6 @@ func jumped():
 
 func _on_dash_timer_timeout():
 	dashing = false
+	$trail.emitting = false
 	$dash_cooldown.start()
 
