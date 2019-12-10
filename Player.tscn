@@ -27,3 +27,7 @@ hframes = 7
 [node name="grounded_tolerance_timer" type="Timer" parent="."]
 wait_time = 0.15
 one_shot = true
+
+[node name="jump_trigger_tolerance_timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
