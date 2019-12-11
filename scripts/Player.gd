@@ -20,10 +20,16 @@ func _physics_process(delta):
 		_velocity = calculcate_move_velocity(_velocity, direction, speed)
 		_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
 		
+		
+		
 		if Input.is_action_pressed("move_left"):
 			$Sprite.flip_h = true
-		if Input.is_action_pressed("move_right"):
+			$Sprite.play("run")
+		elif Input.is_action_pressed("move_right"):
 			$Sprite.flip_h = false
+			$Sprite.play("run")
+		else:
+			$Sprite.play("idle")
 			
 		if Input.is_action_just_pressed("dash") and $dash_cooldown.time_left <= 0:
 			dashing = true
@@ -49,9 +55,10 @@ func _physics_process(delta):
 		# /Grounded jump tolerance	
 	
 func get_direction():
+	var jumping = (jumped() and is_grounded() and can_jump)
 	return Vector2(
 		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
-		-1.0 if (jumped() and is_grounded() and can_jump) else 1.0
+		-1.0 if jumping else 1.0
 	)
 	
 func calculcate_move_velocity(

@@ -1,17 +1,33 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://assets/adventurer-v1.5-Sheet.png" type="Texture" id=2]
-[ext_resource path="res://assets/whitePixel.png" type="Texture" id=3]
+[ext_resource path="res://assets/whitePixel.png" type="Texture" id=2]
+[ext_resource path="res://assets/Player/player-jump1.png" type="Texture" id=3]
+[ext_resource path="res://assets/Player/player-fall1.png" type="Texture" id=4]
+[ext_resource path="res://assets/Player/player-fall2.png" type="Texture" id=5]
+[ext_resource path="res://assets/Player/player-fall3.png" type="Texture" id=6]
+[ext_resource path="res://assets/Player/player-fall4.png" type="Texture" id=7]
+[ext_resource path="res://assets/Player/player-dash1.png" type="Texture" id=8]
+[ext_resource path="res://assets/Player/player-dash2.png" type="Texture" id=9]
+[ext_resource path="res://assets/Player/player-dash3.png" type="Texture" id=10]
+[ext_resource path="res://assets/Player/player-run1.png" type="Texture" id=11]
+[ext_resource path="res://assets/Player/player-run2.png" type="Texture" id=12]
+[ext_resource path="res://assets/Player/player-run3.png" type="Texture" id=13]
+[ext_resource path="res://assets/Player/player-run4.png" type="Texture" id=14]
+[ext_resource path="res://assets/Player/player-run5.png" type="Texture" id=15]
+[ext_resource path="res://assets/Player/player-run6.png" type="Texture" id=16]
+[ext_resource path="res://assets/Player/player-jump2.png" type="Texture" id=17]
+[ext_resource path="res://assets/Player/player-jump3.png" type="Texture" id=18]
+[ext_resource path="res://assets/Player/player-jump4.png" type="Texture" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9, 15 )
 
-[sub_resource type="Gradient" id=6]
+[sub_resource type="Gradient" id=2]
 colors = PoolColorArray( 1, 1, 1, 0.717647, 1, 1, 1, 0.270588 )
 
-[sub_resource type="GradientTexture" id=7]
-gradient = SubResource( 6 )
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
 
 [sub_resource type="Curve" id=4]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.5, 0.4824 ), -2.92171, -2.92171, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
@@ -19,15 +35,44 @@ _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.5, 0.4824 ), -2.92171, -2.
 [sub_resource type="CurveTexture" id=5]
 curve = SubResource( 4 )
 
-[sub_resource type="ParticlesMaterial" id=2]
+[sub_resource type="ParticlesMaterial" id=6]
 flag_disable_z = true
 gravity = Vector3( 0, 0, 0 )
+angular_velocity = 1.05
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 scale_curve = SubResource( 5 )
-color_ramp = SubResource( 7 )
+color_ramp = SubResource( 3 )
 
-[sub_resource type="ImageTexture" id=3]
+[sub_resource type="ImageTexture" id=7]
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "fall",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "dash",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "run",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": false,
+"name": "jump",
+"speed": 8.0
+} ]
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 100, 86 )
@@ -40,12 +85,6 @@ speed = Vector2( 200, 550 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 1, -3 )
-texture = ExtResource( 2 )
-vframes = 16
-hframes = 7
 
 [node name="grounded_tolerance_timer" type="Timer" parent="."]
 wait_time = 0.15
@@ -71,7 +110,11 @@ emitting = false
 amount = 16
 speed_scale = 2.0
 local_coords = false
-process_material = SubResource( 2 )
-texture = ExtResource( 3 )
-normal_map = SubResource( 3 )
+process_material = SubResource( 6 )
+texture = ExtResource( 2 )
+normal_map = SubResource( 7 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 8 )
+animation = "idle"
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]
