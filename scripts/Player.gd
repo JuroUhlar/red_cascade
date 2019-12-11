@@ -8,6 +8,8 @@ export var dash_speed_multiplier = 3.0
 var can_jump = true
 var grounded_last_frame
 var dashing = false
+var jumping = false
+var running = false
 
 func _physics_process(delta):
 	
@@ -20,23 +22,34 @@ func _physics_process(delta):
 		_velocity = calculcate_move_velocity(_velocity, direction, speed)
 		_velocity = move_and_slide(_velocity, FLOOR_NORMAL)
 		
-		
-		
+
 		if Input.is_action_pressed("move_left"):
 			$Sprite.flip_h = true
-			$Sprite.play("run")
+			running = true
 		elif Input.is_action_pressed("move_right"):
 			$Sprite.flip_h = false
-			$Sprite.play("run")
+			running = true
 		else:
-			$Sprite.play("idle")
-			
+			running = false	
+	
 		if Input.is_action_just_pressed("dash") and $dash_cooldown.time_left <= 0:
 			dashing = true
 			$dash_timer.start()
 			
+		jumping = can_jump and jumped() and is_grounded()
+		
+		if dashing:
+			$Sprite.play("dash")
+		elif _velocity.y < 0:
+			$Sprite.play("jump")	
+		elif !is_on_floor():
+			$Sprite.play("fall")
+		elif running: 
+			$Sprite.play("run")	
+		else: $Sprite.play("idle")
+			
 		# Grounded jump tolearance 
-		if Input.is_action_just_pressed("jump"):
+		if Input.is_action_just_pressed("jump") :
 			can_jump = false;
 			jump_trigger_tolerance_timer.start()
 	
@@ -48,14 +61,13 @@ func _physics_process(delta):
 			can_jump = true;
 		else: 
 			grounded_last_frame = false
-		
 			# Prevents unintetional double jump when hittin a low ceiling 	
 		if is_on_ceiling():
 			jump_trigger_tolerance_timer.stop()
-		# /Grounded jump tolerance	
+		# /Grounded jump tolerance
+				
 	
 func get_direction():
-	var jumping = (jumped() and is_grounded() and can_jump)
 	return Vector2(
 		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
 		-1.0 if jumping else 1.0
@@ -71,6 +83,7 @@ func calculcate_move_velocity(
 	new_velocity.y += gravity * get_physics_process_delta_time()
 	if direction.y == -1.0:
 		new_velocity.y = speed.y * direction.y
+	print(new_velocity)
 	return new_velocity
 	
 func is_grounded():
