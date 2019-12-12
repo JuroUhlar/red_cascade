@@ -4,18 +4,21 @@ onready var grounded_tolerance_timer = get_node("grounded_tolerance_timer")
 onready var jump_trigger_tolerance_timer = get_node("jump_trigger_tolerance_timer")
 
 export var dash_speed_multiplier = 3.0
+export var dash_jump_multiplier = 1.0
+export var dash_cooldown_modulation_color = Color(1,1,1,1)
 
 var can_jump = true
 var grounded_last_frame
 var dashing = false
+var dashing_direction = Vector2.ZERO
+var dashing_velocity = Vector2.ZERO
 var jumping = false
 var running = false
 
 func _physics_process(delta):
 	
 	if(dashing):
-		var direction = Vector2(1.0,0.0) if ($Sprite.flip_h == false) else Vector2(-1.0,0)
-		_velocity = move_and_slide(Vector2(direction.x * speed.x * dash_speed_multiplier,0), FLOOR_NORMAL)
+		_velocity = move_and_slide(dashing_velocity, FLOOR_NORMAL)
 		$trail.emitting = true
 	else:
 		var direction = get_direction()
@@ -34,10 +37,13 @@ func _physics_process(delta):
 	
 		if Input.is_action_just_pressed("dash") and $dash_cooldown.time_left <= 0:
 			dashing = true
+			dashing_direction = get_dash_direction()
+			dashing_velocity = calculate_dash_velocity(dashing_direction, speed, dash_speed_multiplier, dash_jump_multiplier)
 			$dash_timer.start()
 			
 		jumping = can_jump and jumped() and is_grounded()
 		
+		# Sprite management based on state
 		if dashing:
 			$Sprite.play("dash")
 		elif _velocity.y < 0:
@@ -47,8 +53,13 @@ func _physics_process(delta):
 		elif running: 
 			$Sprite.play("run")	
 		else: $Sprite.play("idle")
+		
+		if $dash_cooldown.time_left > 0:
+			$Sprite.modulate = dash_cooldown_modulation_color 
+		else: 
+			$Sprite.modulate = Color(1,1,1,1)
 			
-		# Grounded jump tolearance 
+		# Grounded jump tolerance 
 		if Input.is_action_just_pressed("jump") :
 			can_jump = false;
 			jump_trigger_tolerance_timer.start()
@@ -73,25 +84,34 @@ func get_direction():
 		-1.0 if jumping else 1.0
 	)
 	
-func calculcate_move_velocity(
-		linear_velocity: Vector2,
-		direction: Vector2,
-		speed: Vector2
-	) -> Vector2:
+func calculcate_move_velocity(linear_velocity: Vector2,	direction: Vector2, speed: Vector2) -> Vector2:
 	var new_velocity = linear_velocity
 	new_velocity.x = speed.x * direction.x
 	new_velocity.y += gravity * get_physics_process_delta_time()
 	if direction.y == -1.0:
 		new_velocity.y = speed.y * direction.y
-	print(new_velocity)
 	return new_velocity
+	
+func get_dash_direction() -> Vector2:
+	var direction = Vector2.ZERO
+	if Input.is_action_pressed("move_up"):
+		direction.y = -1.0
+		direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
+	else:
+		direction.x = 1.0 if ($Sprite.flip_h == false) else -1.0
+	return direction
+	
+func calculate_dash_velocity(direction: Vector2, speed: Vector2, dash_speed_multiplier: float, dash_jump_multiplier: float) -> Vector2:
+	var velocity = Vector2.ZERO
+	velocity.x = direction.x * speed.x * dash_speed_multiplier
+	velocity.y = direction.y * speed.y * dash_jump_multiplier
+	return velocity
 	
 func is_grounded():
 	return is_on_floor() or (grounded_tolerance_timer.time_left > 0 and _velocity.y > 0)
 	
 func jumped():
 	return jump_trigger_tolerance_timer.time_left > 0 or Input.is_action_just_pressed("jump")
-
 
 func _on_dash_timer_timeout():
 	dashing = false
