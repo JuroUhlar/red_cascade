@@ -118,8 +118,9 @@ texture = ExtResource( 2 )
 normal_map = SubResource( 7 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -1 )
 frames = SubResource( 8 )
-animation = "fall"
+animation = "idle"
 
 [node name="ghost_timer" type="Timer" parent="."]
 wait_time = 0.05
