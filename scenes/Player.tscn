@@ -5,18 +5,18 @@
 [ext_resource path="res://assets/Player/player-jump1.png" type="Texture" id=3]
 [ext_resource path="res://assets/Player/player-fall3.png" type="Texture" id=4]
 [ext_resource path="res://assets/Player/player-fall2.png" type="Texture" id=5]
-[ext_resource path="res://assets/Player/player-dash1.png" type="Texture" id=6]
-[ext_resource path="res://assets/Player/player-dash2.png" type="Texture" id=7]
-[ext_resource path="res://assets/Player/player-dash3.png" type="Texture" id=8]
-[ext_resource path="res://assets/Player/player-run1.png" type="Texture" id=9]
-[ext_resource path="res://assets/Player/player-run2.png" type="Texture" id=10]
-[ext_resource path="res://assets/Player/player-run3.png" type="Texture" id=11]
-[ext_resource path="res://assets/Player/player-run4.png" type="Texture" id=12]
-[ext_resource path="res://assets/Player/player-run5.png" type="Texture" id=13]
-[ext_resource path="res://assets/Player/player-run6.png" type="Texture" id=14]
-[ext_resource path="res://assets/Player/player-jump2.png" type="Texture" id=15]
-[ext_resource path="res://assets/Player/player-jump3.png" type="Texture" id=16]
-[ext_resource path="res://assets/Player/player-jump4.png" type="Texture" id=17]
+[ext_resource path="res://assets/Player/player-run1.png" type="Texture" id=6]
+[ext_resource path="res://assets/Player/player-run2.png" type="Texture" id=7]
+[ext_resource path="res://assets/Player/player-run3.png" type="Texture" id=8]
+[ext_resource path="res://assets/Player/player-run4.png" type="Texture" id=9]
+[ext_resource path="res://assets/Player/player-run5.png" type="Texture" id=10]
+[ext_resource path="res://assets/Player/player-run6.png" type="Texture" id=11]
+[ext_resource path="res://assets/Player/player-jump2.png" type="Texture" id=12]
+[ext_resource path="res://assets/Player/player-jump3.png" type="Texture" id=13]
+[ext_resource path="res://assets/Player/player-jump4.png" type="Texture" id=14]
+[ext_resource path="res://assets/Player/player-dash1.png" type="Texture" id=15]
+[ext_resource path="res://assets/Player/player-dash2.png" type="Texture" id=16]
+[ext_resource path="res://assets/Player/player-dash3.png" type="Texture" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 9, 15 )
@@ -56,20 +56,20 @@ animations = [ {
 "name": "fall",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
-"loop": false,
-"name": "dash",
-"speed": 30.0
-}, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "run",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "jump",
 "speed": 8.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": false,
+"name": "dash",
+"speed": 30.0
 } ]
 
 [node name="Player" type="KinematicBody2D"]
@@ -105,10 +105,11 @@ one_shot = true
 current = true
 
 [node name="trail" type="Particles2D" parent="."]
+visible = false
 show_behind_parent = true
 emitting = false
 amount = 16
-lifetime = 0.5
+lifetime = 4.0
 speed_scale = 2.0
 local_coords = false
 process_material = SubResource( 6 )
@@ -118,4 +119,9 @@ normal_map = SubResource( 7 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 8 )
 animation = "idle"
+
+[node name="ghost_timer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="ghost_timer" to="." method="_on_ghost_timer_timeout"]

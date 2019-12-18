@@ -44,8 +44,10 @@ func _physics_process(delta):
 		jumping = can_jump and jumped() and is_grounded()
 		
 		# Sprite management based on state
-		if dashing:
-			$Sprite.play("dash")
+		if dashing && Input.is_action_pressed("move_up"):
+			$Sprite.play("jump")
+		elif dashing:
+			$Sprite.play("dash")	
 		elif _velocity.y < 0:
 			$Sprite.play("jump")	
 		elif !is_on_floor():
@@ -118,3 +120,10 @@ func _on_dash_timer_timeout():
 	$trail.emitting = false
 	$dash_cooldown.start()
 
+func _on_ghost_timer_timeout():
+	if dashing:
+		var this_ghost = preload("res://Scenes/Ghost.tscn").instance()
+		get_parent().add_child(this_ghost)
+		this_ghost.position = position
+		this_ghost.texture = $Sprite.frames.get_frame($Sprite.animation, $Sprite.frame)
+		this_ghost.flip_h = $Sprite.flip_h
