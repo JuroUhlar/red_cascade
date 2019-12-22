@@ -7,6 +7,7 @@
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 133.633, 133.498 )
+speed = Vector2( 170, 550 )
 
 [node name="Level" parent="." instance=ExtResource( 2 )]
 position = Vector2( 9.46242, 53.686 )

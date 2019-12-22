@@ -6,6 +6,7 @@ onready var jump_trigger_tolerance_timer = get_node("jump_trigger_tolerance_time
 export var dash_speed_multiplier = 3.0
 export var dash_jump_multiplier = 1.0
 export var dash_cooldown_modulation_color = Color(1,1,1,1)
+export (PackedScene) var player_bullet
 
 var can_jump = true
 var grounded_last_frame
@@ -14,6 +15,7 @@ var dashing_direction = Vector2.ZERO
 var dashing_velocity = Vector2.ZERO
 var jumping = false
 var running = false
+var shooting = false
 
 func _physics_process(delta):
 	
@@ -29,9 +31,13 @@ func _physics_process(delta):
 		if Input.is_action_pressed("move_left"):
 			$Sprite.flip_h = true
 			running = true
+			if sign($gun_muzzle.position.x) == 1:
+				$gun_muzzle.position.x *= -1
 		elif Input.is_action_pressed("move_right"):
 			$Sprite.flip_h = false
 			running = true
+			if sign($gun_muzzle.position.x) == -1:
+				$gun_muzzle.position.x *= -1
 		else:
 			running = false	
 	
@@ -43,8 +49,22 @@ func _physics_process(delta):
 			
 		jumping = can_jump and jumped() and is_grounded()
 		
+		if Input.is_action_just_pressed("shoot") and !shooting:
+			shooting = true
+			var projectile = player_bullet.instance()
+			if sign($gun_muzzle.position.x) == 1:
+				projectile.set_projectile_direction(1)
+			else:
+				projectile.set_projectile_direction(-1)
+			get_parent().add_child(projectile)
+			projectile.position = $gun_muzzle.global_position
+			shooting = true
+			
+		
 		# Sprite management based on state
-		if dashing && Input.is_action_pressed("move_up"):
+		if shooting:
+			$Sprite.play("shoot")
+		elif dashing && Input.is_action_pressed("move_up"):
 			$Sprite.play("jump")
 		elif dashing:
 			$Sprite.play("dash")	
@@ -127,3 +147,7 @@ func _on_ghost_timer_timeout():
 		this_ghost.position = position
 		this_ghost.texture = $Sprite.frames.get_frame($Sprite.animation, $Sprite.frame)
 		this_ghost.flip_h = $Sprite.flip_h
+
+
+func _on_Sprite_animation_finished():
+	shooting = false
