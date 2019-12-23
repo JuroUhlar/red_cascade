@@ -13,3 +13,9 @@ func set_projectile_direction(dir):
 func _physics_process(delta):
 	velocity.x = speed * delta * direction
 	translate(velocity)
+
+func _on_lifetime_timer_timeout():
+	queue_free()
+
+func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()

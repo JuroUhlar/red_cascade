@@ -17,3 +17,13 @@ centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="lifetime_timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 0.0448735, -0.0224366 )
+scale = Vector2( 0.385248, 0.190052 )
+[connection signal="timeout" from="lifetime_timer" to="." method="_on_lifetime_timer_timeout"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

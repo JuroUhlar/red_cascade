@@ -112,6 +112,10 @@ one_shot = true
 wait_time = 0.6
 one_shot = true
 
+[node name="gun_timer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true
+
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 
@@ -139,5 +143,6 @@ animation = "shoot"
 [node name="gun_muzzle" type="Position2D" parent="."]
 position = Vector2( 12, -3 )
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]
+[connection signal="timeout" from="gun_timer" to="." method="_on_gun_timer_timeout"]
 [connection signal="timeout" from="ghost_timer" to="." method="_on_ghost_timer_timeout"]
 [connection signal="animation_finished" from="Sprite" to="." method="_on_Sprite_animation_finished"]

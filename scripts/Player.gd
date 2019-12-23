@@ -16,6 +16,7 @@ var dashing_velocity = Vector2.ZERO
 var jumping = false
 var running = false
 var shooting = false
+var can_shoot = true
 
 func _physics_process(delta):
 	
@@ -49,8 +50,10 @@ func _physics_process(delta):
 			
 		jumping = can_jump and jumped() and is_grounded()
 		
-		if Input.is_action_just_pressed("shoot") and !shooting:
+		if Input.is_action_pressed("shoot") and !shooting and can_shoot:
 			shooting = true
+			can_shoot = false
+			$gun_timer.start()
 			var projectile = player_bullet.instance()
 			if sign($gun_muzzle.position.x) == 1:
 				projectile.set_projectile_direction(1)
@@ -58,7 +61,6 @@ func _physics_process(delta):
 				projectile.set_projectile_direction(-1)
 			get_parent().add_child(projectile)
 			projectile.position = $gun_muzzle.global_position
-			shooting = true
 			
 		
 		# Sprite management based on state
@@ -151,3 +153,7 @@ func _on_ghost_timer_timeout():
 
 func _on_Sprite_animation_finished():
 	shooting = false
+
+
+func _on_gun_timer_timeout():
+	can_shoot = true
