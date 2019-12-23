@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/Background/red-cascade-tutorial-bg-0.png" type="Texture" id=1]
 [ext_resource path="res://assets/Background/red-cascade-tutorial-bg-1.png" type="Texture" id=2]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/NPC.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Wall_Enemy.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 351, 8 )
@@ -88,3 +89,6 @@ shape = SubResource( 8 )
 
 [node name="NPC" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1320, 81 )
+
+[node name="Wall Enemy" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1134, 206 )
