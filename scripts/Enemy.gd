@@ -24,6 +24,8 @@ func _physics_process(delta):
 			$Sprite.flip_h = true
 		else: 
 			$Sprite.flip_h = false
+			
+		$Sprite.play("walk")
 		
 func take_damage(damage):
 	hp -= damage
