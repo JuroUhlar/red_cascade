@@ -23,6 +23,7 @@ extents = Vector2( 11, 18 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
+frame = 6
 playing = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

@@ -1,5 +1,7 @@
 extends Actor
 
+export var speed: = Vector2(200.0, 500.0)
+
 onready var grounded_tolerance_timer = get_node("grounded_tolerance_timer")
 onready var jump_trigger_tolerance_timer = get_node("jump_trigger_tolerance_timer")
 
