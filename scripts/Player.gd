@@ -165,7 +165,8 @@ func _on_gun_timer_timeout():
 
 func _on_enemy_detector_body_entered(body):
 	if body.is_in_group("enemies"):
-		die()
+		if (!dashing):
+			die()
 		
 func die():
 	dying = true
