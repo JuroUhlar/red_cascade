@@ -167,7 +167,7 @@ normal_map = SubResource( 7 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 z_index = 1
 frames = SubResource( 8 )
-animation = "die"
+animation = "idle"
 
 [node name="gun_muzzle" type="Position2D" parent="."]
 position = Vector2( 12, -3 )
