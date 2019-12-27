@@ -6,6 +6,7 @@ export var speed = Vector2(100,200)
 func _ready():
 	_velocity.x = -speed.x
 	set_physics_process(false)
+	add_to_group("enemies")
 
 func _physics_process(delta):
 	_velocity.y += gravity * delta

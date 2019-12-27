@@ -19,10 +19,13 @@ var jumping = false
 var running = false
 var shooting = false
 var can_shoot = true
+var dying = false
 
 func _physics_process(delta):
 	
-	if(dashing):
+	if(dying):
+		pass
+	elif(dashing):
 		_velocity = move_and_slide(dashing_velocity, FLOOR_NORMAL)
 		$trail.emitting = true
 	else:
@@ -156,6 +159,19 @@ func _on_ghost_timer_timeout():
 func _on_Sprite_animation_finished():
 	shooting = false
 
-
 func _on_gun_timer_timeout():
 	can_shoot = true
+
+
+func _on_enemy_detector_body_entered(body):
+	if body.is_in_group("enemies"):
+		die()
+		
+func die():
+	dying = true
+	$Sprite.play("die")
+	yield($Sprite, "animation_finished")
+	$death_timer.start()
+
+func _on_death_timer_timeout():
+	get_tree().reload_current_scene()

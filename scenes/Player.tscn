@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://scenes/player_bullet.tscn" type="PackedScene" id=2]
@@ -7,23 +7,33 @@
 [ext_resource path="res://assets/Player/player-idle2.png" type="Texture" id=5]
 [ext_resource path="res://assets/Player/player-fall3.png" type="Texture" id=6]
 [ext_resource path="res://assets/Player/player-fall2.png" type="Texture" id=7]
-[ext_resource path="res://assets/Player/player-jump2.png" type="Texture" id=8]
-[ext_resource path="res://assets/Player/player-jump3.png" type="Texture" id=9]
-[ext_resource path="res://assets/Player/player-jump4.png" type="Texture" id=10]
-[ext_resource path="res://assets/Player/player-dash1.png" type="Texture" id=11]
-[ext_resource path="res://assets/Player/player-dash2.png" type="Texture" id=12]
-[ext_resource path="res://assets/Player/player-dash3.png" type="Texture" id=13]
-[ext_resource path="res://assets/Player/player-run1.png" type="Texture" id=14]
-[ext_resource path="res://assets/Player/player-run2.png" type="Texture" id=15]
-[ext_resource path="res://assets/Player/player-run3.png" type="Texture" id=16]
-[ext_resource path="res://assets/Player/player-run4.png" type="Texture" id=17]
-[ext_resource path="res://assets/Player/player-run5.png" type="Texture" id=18]
-[ext_resource path="res://assets/Player/player-run6.png" type="Texture" id=19]
-[ext_resource path="res://assets/Player/player-shoot1.png" type="Texture" id=20]
-[ext_resource path="res://assets/Player/player-shoot2.png" type="Texture" id=21]
+[ext_resource path="res://assets/Player/player-dash1.png" type="Texture" id=8]
+[ext_resource path="res://assets/Player/player-dash2.png" type="Texture" id=9]
+[ext_resource path="res://assets/Player/player-dash3.png" type="Texture" id=10]
+[ext_resource path="res://assets/Player/player-shoot1.png" type="Texture" id=11]
+[ext_resource path="res://assets/Player/player-shoot2.png" type="Texture" id=12]
+[ext_resource path="res://assets/Player/player-run1.png" type="Texture" id=13]
+[ext_resource path="res://assets/Player/player-run2.png" type="Texture" id=14]
+[ext_resource path="res://assets/Player/player-run3.png" type="Texture" id=15]
+[ext_resource path="res://assets/Player/player-run4.png" type="Texture" id=16]
+[ext_resource path="res://assets/Player/player-run5.png" type="Texture" id=17]
+[ext_resource path="res://assets/Player/player-run6.png" type="Texture" id=18]
+[ext_resource path="res://assets/Player/player-jump2.png" type="Texture" id=19]
+[ext_resource path="res://assets/Player/player-jump3.png" type="Texture" id=20]
+[ext_resource path="res://assets/Player/player-jump4.png" type="Texture" id=21]
+[ext_resource path="res://assets/NPC/enemy_death1.png" type="Texture" id=22]
+[ext_resource path="res://assets/NPC/enemy_death2.png" type="Texture" id=23]
+[ext_resource path="res://assets/NPC/enemy_death3.png" type="Texture" id=24]
+[ext_resource path="res://assets/NPC/enemy_death4.png" type="Texture" id=25]
+[ext_resource path="res://assets/NPC/enemy_death5.png" type="Texture" id=26]
+[ext_resource path="res://assets/NPC/enemy_death6.png" type="Texture" id=27]
+[ext_resource path="res://assets/NPC/enemy_death7.png" type="Texture" id=28]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10.8078, 15 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 10, 11.5278 )
 
 [sub_resource type="Gradient" id=2]
 colors = PoolColorArray( 1, 1, 1, 0.717647, 1, 1, 1, 0.270588 )
@@ -61,24 +71,29 @@ animations = [ {
 "speed": 8.0
 }, {
 "frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "jump",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": false,
 "name": "dash",
 "speed": 30.0
 }, {
-"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": false,
+"name": "shoot",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
 "loop": true,
 "name": "run",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 20 ), ExtResource( 21 ) ],
+"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "jump",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ) ],
 "loop": false,
-"name": "shoot",
-"speed": 20.0
+"name": "die",
+"speed": 30.0
 } ]
 
 [node name="Player" type="KinematicBody2D"]
@@ -95,6 +110,15 @@ player_bullet = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1 )
 shape = SubResource( 1 )
+
+[node name="enemy_detector" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy_detector"]
+modulate = Color( 0.254902, 0.152941, 0.843137, 1 )
+position = Vector2( 0, 1.46 )
+scale = Vector2( 1.13, 1.38 )
+shape = SubResource( 9 )
 
 [node name="grounded_tolerance_timer" type="Timer" parent="."]
 wait_time = 0.15
@@ -116,7 +140,16 @@ one_shot = true
 wait_time = 0.25
 one_shot = true
 
+[node name="death_timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="ghost_timer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 0, -21.04 )
 current = true
 
 [node name="trail" type="Particles2D" parent="."]
@@ -131,18 +164,16 @@ process_material = SubResource( 6 )
 texture = ExtResource( 3 )
 normal_map = SubResource( 7 )
 
-[node name="ghost_timer" type="Timer" parent="."]
-wait_time = 0.05
-autostart = true
-
 [node name="Sprite" type="AnimatedSprite" parent="."]
 z_index = 1
 frames = SubResource( 8 )
-animation = "shoot"
+animation = "die"
 
 [node name="gun_muzzle" type="Position2D" parent="."]
 position = Vector2( 12, -3 )
+[connection signal="body_entered" from="enemy_detector" to="." method="_on_enemy_detector_body_entered"]
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="gun_timer" to="." method="_on_gun_timer_timeout"]
+[connection signal="timeout" from="death_timer" to="." method="_on_death_timer_timeout"]
 [connection signal="timeout" from="ghost_timer" to="." method="_on_ghost_timer_timeout"]
 [connection signal="animation_finished" from="Sprite" to="." method="_on_Sprite_animation_finished"]
