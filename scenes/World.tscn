@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Level.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Enemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Button.tscn" type="PackedScene" id=4]
 
 [node name="World" type="Node2D"]
 
@@ -17,3 +18,7 @@ position = Vector2( 436.817, 242.62 )
 
 [node name="Enemy2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 320.948, 242.671 )
+
+[node name="Button" parent="." instance=ExtResource( 4 )]
+position = Vector2( 325.501, 117.772 )
+targetPath = NodePath("../Enemy2")
