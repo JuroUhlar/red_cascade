@@ -21,8 +21,11 @@ var shooting = false
 var can_shoot = true
 var dying = false
 
-func _physics_process(delta):
-	
+
+func _ready():
+	add_to_group("player")
+
+func _physics_process(delta):	
 	if(dying):
 		pass
 	elif(dashing):

@@ -2,6 +2,7 @@ extends Actor
 
 export var speed = Vector2(100,200)
 export var hp = 30
+export var active = false
 
 var dying = false
 
@@ -10,9 +11,11 @@ func _ready():
 	set_physics_process(false)
 	add_to_group("enemies")
 	add_to_group("damageable")
+	$Sprite.play("dormant")
+	$CollisionShape2D.scale = Vector2.ZERO
 
 func _physics_process(delta):
-	if(dying):
+	if(dying or !active):
 		pass
 	else:
 		_velocity.y += gravity * delta
@@ -39,9 +42,14 @@ func die():
 	remove_from_group("enemies")
 	$Sprite.play("die")
 	yield($Sprite, "animation_finished")
+	queue_free()
 
+func activate():
+	$Sprite.play("spawn")
+	yield($Sprite, "animation_finished")
+	$CollisionShape2D.scale = Vector2.ONE
+	active = true
 
-
-
-
-
+func _on_player_detector_body_entered(body):
+	if(body.is_in_group("player")):
+		activate()
