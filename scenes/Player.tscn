@@ -5,95 +5,95 @@
 [ext_resource path="res://assets/Player/player-trail.png" type="Texture" id=3]
 [ext_resource path="res://assets/Player/player-idle1.png" type="Texture" id=4]
 [ext_resource path="res://assets/Player/player-idle2.png" type="Texture" id=5]
-[ext_resource path="res://assets/Player/player-fall3.png" type="Texture" id=6]
-[ext_resource path="res://assets/Player/player-fall2.png" type="Texture" id=7]
-[ext_resource path="res://assets/Player/player-dash1.png" type="Texture" id=8]
-[ext_resource path="res://assets/Player/player-dash2.png" type="Texture" id=9]
-[ext_resource path="res://assets/Player/player-dash3.png" type="Texture" id=10]
-[ext_resource path="res://assets/Player/player-shoot1.png" type="Texture" id=11]
-[ext_resource path="res://assets/Player/player-shoot2.png" type="Texture" id=12]
-[ext_resource path="res://assets/Player/player-run1.png" type="Texture" id=13]
-[ext_resource path="res://assets/Player/player-run2.png" type="Texture" id=14]
-[ext_resource path="res://assets/Player/player-run3.png" type="Texture" id=15]
-[ext_resource path="res://assets/Player/player-run4.png" type="Texture" id=16]
-[ext_resource path="res://assets/Player/player-run5.png" type="Texture" id=17]
-[ext_resource path="res://assets/Player/player-run6.png" type="Texture" id=18]
-[ext_resource path="res://assets/Player/player-jump2.png" type="Texture" id=19]
-[ext_resource path="res://assets/Player/player-jump3.png" type="Texture" id=20]
-[ext_resource path="res://assets/Player/player-jump4.png" type="Texture" id=21]
-[ext_resource path="res://assets/NPC/enemy_death1.png" type="Texture" id=22]
-[ext_resource path="res://assets/NPC/enemy_death2.png" type="Texture" id=23]
-[ext_resource path="res://assets/NPC/enemy_death3.png" type="Texture" id=24]
-[ext_resource path="res://assets/NPC/enemy_death4.png" type="Texture" id=25]
-[ext_resource path="res://assets/NPC/enemy_death5.png" type="Texture" id=26]
-[ext_resource path="res://assets/NPC/enemy_death6.png" type="Texture" id=27]
-[ext_resource path="res://assets/NPC/enemy_death7.png" type="Texture" id=28]
+[ext_resource path="res://assets/NPC/enemy_death1.png" type="Texture" id=6]
+[ext_resource path="res://assets/NPC/enemy_death2.png" type="Texture" id=7]
+[ext_resource path="res://assets/NPC/enemy_death3.png" type="Texture" id=8]
+[ext_resource path="res://assets/NPC/enemy_death4.png" type="Texture" id=9]
+[ext_resource path="res://assets/NPC/enemy_death5.png" type="Texture" id=10]
+[ext_resource path="res://assets/NPC/enemy_death6.png" type="Texture" id=11]
+[ext_resource path="res://assets/NPC/enemy_death7.png" type="Texture" id=12]
+[ext_resource path="res://assets/Player/player-fall3.png" type="Texture" id=13]
+[ext_resource path="res://assets/Player/player-fall2.png" type="Texture" id=14]
+[ext_resource path="res://assets/Player/player-run1.png" type="Texture" id=15]
+[ext_resource path="res://assets/Player/player-run2.png" type="Texture" id=16]
+[ext_resource path="res://assets/Player/player-run3.png" type="Texture" id=17]
+[ext_resource path="res://assets/Player/player-run4.png" type="Texture" id=18]
+[ext_resource path="res://assets/Player/player-run5.png" type="Texture" id=19]
+[ext_resource path="res://assets/Player/player-run6.png" type="Texture" id=20]
+[ext_resource path="res://assets/Player/player-jump2.png" type="Texture" id=21]
+[ext_resource path="res://assets/Player/player-jump3.png" type="Texture" id=22]
+[ext_resource path="res://assets/Player/player-jump4.png" type="Texture" id=23]
+[ext_resource path="res://assets/Player/player-dash1.png" type="Texture" id=24]
+[ext_resource path="res://assets/Player/player-dash2.png" type="Texture" id=25]
+[ext_resource path="res://assets/Player/player-dash3.png" type="Texture" id=26]
+[ext_resource path="res://assets/Player/player-shoot1.png" type="Texture" id=27]
+[ext_resource path="res://assets/Player/player-shoot2.png" type="Texture" id=28]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10.8078, 15 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 10, 11.5278 )
 
-[sub_resource type="Gradient" id=2]
+[sub_resource type="Gradient" id=3]
 colors = PoolColorArray( 1, 1, 1, 0.717647, 1, 1, 1, 0.270588 )
 
-[sub_resource type="GradientTexture" id=3]
-gradient = SubResource( 2 )
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
 
-[sub_resource type="Curve" id=4]
+[sub_resource type="Curve" id=5]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.5, 0.4824 ), -2.92171, -2.92171, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=5]
-curve = SubResource( 4 )
+[sub_resource type="CurveTexture" id=6]
+curve = SubResource( 5 )
 
-[sub_resource type="ParticlesMaterial" id=6]
+[sub_resource type="ParticlesMaterial" id=7]
 flag_disable_z = true
 gravity = Vector3( 0, 0, 0 )
 angular_velocity = 1.05
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
-scale_curve = SubResource( 5 )
-color_ramp = SubResource( 3 )
+scale_curve = SubResource( 6 )
+color_ramp = SubResource( 4 )
 
-[sub_resource type="ImageTexture" id=7]
+[sub_resource type="ImageTexture" id=8]
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="SpriteFrames" id=9]
 animations = [ {
 "frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "idle",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": false,
+"name": "die",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "fall",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
-"loop": false,
-"name": "dash",
-"speed": 30.0
-}, {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
-"loop": false,
-"name": "shoot",
-"speed": 20.0
-}, {
-"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": true,
 "name": "run",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ) ],
 "loop": true,
 "name": "jump",
 "speed": 8.0
 }, {
-"frames": [ ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ) ],
+"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
 "loop": false,
-"name": "die",
+"name": "dash",
 "speed": 30.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 28 ) ],
+"loop": false,
+"name": "shoot",
+"speed": 20.0
 } ]
 
 [node name="Player" type="KinematicBody2D"]
@@ -118,7 +118,7 @@ collision_mask = 2
 modulate = Color( 0.254902, 0.152941, 0.843137, 1 )
 position = Vector2( 0, 1.46 )
 scale = Vector2( 1.13, 1.38 )
-shape = SubResource( 9 )
+shape = SubResource( 2 )
 
 [node name="grounded_tolerance_timer" type="Timer" parent="."]
 wait_time = 0.15
@@ -151,7 +151,6 @@ autostart = true
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 0, -21.04 )
 current = true
-zoom = Vector2( 2, 2 )
 
 [node name="trail" type="Particles2D" parent="."]
 visible = false
@@ -161,13 +160,13 @@ amount = 16
 lifetime = 4.0
 speed_scale = 2.0
 local_coords = false
-process_material = SubResource( 6 )
+process_material = SubResource( 7 )
 texture = ExtResource( 3 )
-normal_map = SubResource( 7 )
+normal_map = SubResource( 8 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 z_index = 1
-frames = SubResource( 8 )
+frames = SubResource( 9 )
 animation = "idle"
 
 [node name="gun_muzzle" type="Position2D" parent="."]
