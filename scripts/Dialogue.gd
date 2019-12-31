@@ -1,8 +1,7 @@
 extends Control
 
-
 export (Array, String) var texts = ["default dialogue text 1"]
-export (Texture) var avatarTexture
+export (Array, Texture) var avatarTextures
 
 onready var button = get_node("Panel/MarginContainer/VBoxContainer/HBoxContainer2/Button")
 onready var line = get_node("Panel/MarginContainer/VBoxContainer/HBoxContainer/CenterContainer2/Line")
@@ -14,41 +13,46 @@ var lineIndex = 0
 
 func _ready():
 	lineCount = texts.size()
-	line.text = texts[0]
-	avatar.texture = avatarTexture
-	button.text = getButtonText()
+	updateDialogue()
 
 func _on_Button_pressed():
 	pressed()
 	
-func activate():
-	visible = true
-	get_tree().paused = true
-	line.text = texts[lineIndex]
-	button.text = getButtonText()
-	$dismissable_timer.start()
-	button.grab_focus()
-
 func _process(delta):
 	if(dismissable and Input.is_action_just_released("interact")):
 		pressed()
 
+func activate():
+	visible = true
+	get_tree().paused = true
+	updateDialogue()
+	$dismissable_timer.start()
+	button.grab_focus()
+
 func pressed():
 	if lineIndex < lineCount - 1:
 		lineIndex += 1
-		line.text = texts[lineIndex]
-		button.text = getButtonText()
+		updateDialogue()
 	else:	
-		visible = false
-		dismissable = false
-		lineIndex = 0
-		get_tree().paused = false
+		closeDialogue()
 
 func _on_dismissable_timer_timeout():
 	dismissable = true
+			
+func updateDialogue():
+	line.text = texts[lineIndex]
+	button.text = getButtonText()
+	avatar.texture = avatarTextures[lineIndex]
 	
 func getButtonText():
 	if lineIndex == lineCount - 1:
 		return "Close"
 	else:
 		return "Next"
+
+func closeDialogue():
+	visible = false
+	dismissable = false
+	lineIndex = 0
+	get_tree().paused = false
+	
