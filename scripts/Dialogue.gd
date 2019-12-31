@@ -1,8 +1,19 @@
 extends Control
 
+
+export (String) var text = "default dialogue text"
+export (Texture) var avatarTexture 
+ 
+
 onready var button = get_node("Panel/MarginContainer/VBoxContainer/HBoxContainer2/Button")
+onready var line = get_node("Panel/MarginContainer/VBoxContainer/HBoxContainer/CenterContainer2/Line")
+onready var avatar = get_node("Panel/MarginContainer/VBoxContainer/HBoxContainer/CenterContainer/Avatar")
 
 var dismissable = false
+
+func _ready():
+	line.text = text
+	avatar.texture = avatarTexture
 
 func _on_Button_pressed():
 	pressed()
