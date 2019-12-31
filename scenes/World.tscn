@@ -24,8 +24,17 @@ position = Vector2( 320.948, 242.671 )
 position = Vector2( 325.501, 117.772 )
 targetPath = NodePath("../CanvasLayer/DialogBox")
 
+[node name="Button2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 121.876, 86.0065 )
+targetPath = NodePath("../CanvasLayer/DialogBox2")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 pause_mode = 2
 
 [node name="DialogBox" parent="CanvasLayer" instance=ExtResource( 5 )]
 visible = false
+texts = [ "Shit! I really gotta get to that terminal before the whole module runs our of oxygen!" ]
+
+[node name="DialogBox2" parent="CanvasLayer" instance=ExtResource( 5 )]
+visible = false
+texts = [ "Holy moly! I really gotta get to that terminal before the whole module runs our of oxygen!", "default dialoge text 2" ]

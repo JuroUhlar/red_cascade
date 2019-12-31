@@ -11,7 +11,7 @@ margin_top = 80.0
 margin_right = -100.0
 margin_bottom = -80.0
 script = ExtResource( 1 )
-text = "Fuck! I really gotta get to that terminal before the whole module runs our of oxygen!"
+texts = [ "Fuck! I really gotta get to that terminal before the whole module runs our of oxygen!" ]
 avatarTexture = ExtResource( 2 )
 
 [node name="Panel" type="Panel" parent="."]
@@ -69,10 +69,10 @@ margin_bottom = 90.0
 alignment = 2
 
 [node name="Button" type="Button" parent="Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 230.0
+margin_left = 218.0
 margin_right = 260.0
 margin_bottom = 20.0
-text = "Ok"
+text = "Next"
 
 [node name="dismissable_timer" type="Timer" parent="."]
 wait_time = 0.2

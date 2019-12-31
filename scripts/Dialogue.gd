@@ -1,19 +1,22 @@
 extends Control
 
 
-export (String) var text = "default dialogue text"
-export (Texture) var avatarTexture 
- 
+export (Array, String) var texts = ["default dialogue text 1"]
+export (Texture) var avatarTexture
 
 onready var button = get_node("Panel/MarginContainer/VBoxContainer/HBoxContainer2/Button")
 onready var line = get_node("Panel/MarginContainer/VBoxContainer/HBoxContainer/CenterContainer2/Line")
 onready var avatar = get_node("Panel/MarginContainer/VBoxContainer/HBoxContainer/CenterContainer/Avatar")
 
 var dismissable = false
+var lineCount = 1
+var lineIndex = 0 
 
 func _ready():
-	line.text = text
+	lineCount = texts.size()
+	line.text = texts[0]
 	avatar.texture = avatarTexture
+	button.text = getButtonText()
 
 func _on_Button_pressed():
 	pressed()
@@ -21,17 +24,31 @@ func _on_Button_pressed():
 func activate():
 	visible = true
 	get_tree().paused = true
+	line.text = texts[lineIndex]
+	button.text = getButtonText()
 	$dismissable_timer.start()
 	button.grab_focus()
-	
+
 func _process(delta):
-	if(dismissable and Input.is_action_pressed("interact")):
+	if(dismissable and Input.is_action_just_released("interact")):
 		pressed()
 
 func pressed():
-	visible = false
-	dismissable = false
-	get_tree().paused = false
+	if lineIndex < lineCount - 1:
+		lineIndex += 1
+		line.text = texts[lineIndex]
+		button.text = getButtonText()
+	else:	
+		visible = false
+		dismissable = false
+		lineIndex = 0
+		get_tree().paused = false
 
 func _on_dismissable_timer_timeout():
 	dismissable = true
+	
+func getButtonText():
+	if lineIndex == lineCount - 1:
+		return "Close"
+	else:
+		return "Next"
