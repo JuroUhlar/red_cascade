@@ -20,10 +20,12 @@ func _ready():
 func _on_Button_body_entered(body):
 	if(body.is_in_group("player")):
 		player_is_close = true
+		$Hint.visible = true
 
 func _on_Button_body_exited(body):
 	if(body.is_in_group("player")):
 		player_is_close = false
+		$Hint.visible = false
 		
 func _process(delta):
 	if(Input.is_action_just_pressed("interact") and player_is_close):

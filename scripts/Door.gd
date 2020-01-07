@@ -2,6 +2,7 @@ extends StaticBody2D
 
 export var open = false;
 
+
 func activate():
 	open()
 	
