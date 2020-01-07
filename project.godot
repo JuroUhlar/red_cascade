@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="red_cascade2"
-run/main_scene="res://scenes/World.tscn"
+run/main_scene="res://scenes/Level.tscn"
 config/icon="res://icon.png"
 
 [display]

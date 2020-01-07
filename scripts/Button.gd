@@ -49,7 +49,7 @@ func deactivate():
 		target.deactivate()
 		
 func target_exists():
-	return get_tree().get_root().has_node(targetPathAbsolute)
+	return !targetPath.is_empty() and  get_tree().get_root().has_node(targetPathAbsolute)
 	
 
 
