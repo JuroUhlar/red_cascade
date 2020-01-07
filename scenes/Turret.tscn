@@ -1,0 +1,51 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Turret.gd" type="Script" id=1]
+[ext_resource path="res://assets/Turret/turret_deploy0.png" type="Texture" id=2]
+[ext_resource path="res://assets/Turret/turret_deploy1.png" type="Texture" id=3]
+[ext_resource path="res://assets/Turret/turret_deploy2.png" type="Texture" id=4]
+[ext_resource path="res://assets/Turret/turret_deploy3.png" type="Texture" id=5]
+[ext_resource path="res://assets/Turret/turret_deploy4.png" type="Texture" id=6]
+[ext_resource path="res://assets/Turret/turret_deploy5.png" type="Texture" id=7]
+[ext_resource path="res://assets/Turret/turret_deploy6.png" type="Texture" id=8]
+[ext_resource path="res://assets/Turret/turret_deploy7.png" type="Texture" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 17.3934 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": false,
+"name": "deploy",
+"speed": 10.0
+} ]
+
+[node name="Turret" type="StaticBody2D"]
+collision_layer = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 2 )
+animation = "idle"
+playing = true
+
+[node name="RayCast_right" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 150, 0 )
+
+[node name="RayCast_left" type="RayCast2D" parent="."]
+enabled = true
+exclude_parent = false
+cast_to = Vector2( -150, 0 )
