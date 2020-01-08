@@ -98,7 +98,7 @@ animations = [ {
 
 [node name="Player" type="KinematicBody2D"]
 position = Vector2( 103, 84 )
-collision_mask = 14
+collision_mask = 12
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
@@ -149,7 +149,6 @@ wait_time = 0.05
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 0, -21.04 )
 current = true
 
 [node name="trail" type="Particles2D" parent="."]

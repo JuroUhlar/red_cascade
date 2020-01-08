@@ -9,21 +9,21 @@
 [ext_resource path="res://assets/NPC/enemy_death5.png" type="Texture" id=7]
 [ext_resource path="res://assets/NPC/enemy_death6.png" type="Texture" id=8]
 [ext_resource path="res://assets/NPC/enemy_death7.png" type="Texture" id=9]
-[ext_resource path="res://assets/Enemy/enemy-spawn1.png" type="Texture" id=10]
-[ext_resource path="res://assets/Enemy/enemy-spawn2.png" type="Texture" id=11]
-[ext_resource path="res://assets/Enemy/enemy-spawn3.png" type="Texture" id=12]
-[ext_resource path="res://assets/Enemy/enemy-spawn4.png" type="Texture" id=13]
-[ext_resource path="res://assets/Enemy/enemy-spawn5.png" type="Texture" id=14]
-[ext_resource path="res://assets/Enemy/enemy-spawn6.png" type="Texture" id=15]
-[ext_resource path="res://assets/Enemy/enemy-spawn7.png" type="Texture" id=16]
-[ext_resource path="res://assets/Enemy/enemy-walk1.png" type="Texture" id=17]
-[ext_resource path="res://assets/Enemy/enemy-walk2.png" type="Texture" id=18]
-[ext_resource path="res://assets/Enemy/enemy-walk3.png" type="Texture" id=19]
-[ext_resource path="res://assets/Enemy/enemy-walk4.png" type="Texture" id=20]
-[ext_resource path="res://assets/Enemy/enemy-walk5.png" type="Texture" id=21]
-[ext_resource path="res://assets/Enemy/enemy-walk6.png" type="Texture" id=22]
-[ext_resource path="res://assets/Enemy/enemy-walk7.png" type="Texture" id=23]
-[ext_resource path="res://assets/Enemy/enemy-walk8.png" type="Texture" id=24]
+[ext_resource path="res://assets/Enemy/enemy-walk1.png" type="Texture" id=10]
+[ext_resource path="res://assets/Enemy/enemy-walk2.png" type="Texture" id=11]
+[ext_resource path="res://assets/Enemy/enemy-walk3.png" type="Texture" id=12]
+[ext_resource path="res://assets/Enemy/enemy-walk4.png" type="Texture" id=13]
+[ext_resource path="res://assets/Enemy/enemy-walk5.png" type="Texture" id=14]
+[ext_resource path="res://assets/Enemy/enemy-walk6.png" type="Texture" id=15]
+[ext_resource path="res://assets/Enemy/enemy-walk7.png" type="Texture" id=16]
+[ext_resource path="res://assets/Enemy/enemy-walk8.png" type="Texture" id=17]
+[ext_resource path="res://assets/Enemy/enemy-spawn1.png" type="Texture" id=18]
+[ext_resource path="res://assets/Enemy/enemy-spawn2.png" type="Texture" id=19]
+[ext_resource path="res://assets/Enemy/enemy-spawn3.png" type="Texture" id=20]
+[ext_resource path="res://assets/Enemy/enemy-spawn4.png" type="Texture" id=21]
+[ext_resource path="res://assets/Enemy/enemy-spawn5.png" type="Texture" id=22]
+[ext_resource path="res://assets/Enemy/enemy-spawn6.png" type="Texture" id=23]
+[ext_resource path="res://assets/Enemy/enemy-spawn7.png" type="Texture" id=24]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 12.1487, 16.0762 )
@@ -40,24 +40,24 @@ animations = [ {
 "name": "die",
 "speed": 20.0
 }, {
-"frames": [ ExtResource( 10 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "walk",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 18 ) ],
 "loop": true,
 "name": "dormant",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
 "loop": true,
 "name": "spawn",
 "speed": 15.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
-"loop": true,
-"name": "walk",
-"speed": 12.0
 } ]
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 73.6115
+radius = 74.9683
 
 [node name="Enemy" type="KinematicBody2D"]
 collision_layer = 2
@@ -81,8 +81,12 @@ process_parent = true
 physics_process_parent = true
 
 [node name="player_detector" type="Area2D" parent="."]
+scale = Vector2( 1.48, 0.48 )
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_detector"]
+visible = false
 self_modulate = Color( 0.945098, 1, 0.278431, 0.309804 )
+scale = Vector2( 1, 1.75 )
 shape = SubResource( 3 )
 [connection signal="body_entered" from="player_detector" to="." method="_on_player_detector_body_entered"]

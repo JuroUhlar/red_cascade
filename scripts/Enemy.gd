@@ -7,12 +7,16 @@ export var active = false
 var dying = false
 
 func _ready():
-	_velocity.x = -speed.x
+	_velocity.x = speed.x
 	set_physics_process(false)
 	add_to_group("enemies")
 	add_to_group("damageable")
-	$Sprite.play("dormant")
-	$CollisionShape2D.scale = Vector2.ZERO
+	if(!active):
+		$Sprite.play("dormant")
+		$CollisionShape2D.scale = Vector2.ZERO
+	else:
+		$Sprite.play("spawn")
+		$CollisionShape2D.scale = Vector2.ONE
 
 func _physics_process(delta):
 	if(dying or !active):

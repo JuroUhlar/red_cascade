@@ -68,6 +68,7 @@ position = Vector2( 436.817, 242.62 )
 
 [node name="Enemy2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 320.948, 242.671 )
+active = true
 
 [node name="Button" parent="." instance=ExtResource( 4 )]
 position = Vector2( 325.501, 117.772 )
