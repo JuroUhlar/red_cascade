@@ -2,13 +2,16 @@ extends StaticBody2D
 
 export var open = false;
 
+func _ready():
+	$AnimationPlayer.root_node = ".."
+	print($AnimationPlayer.root_node)
+	
 
 func activate():
 	open()
 	
 func deactivate():
 	close()
-
 
 func open():
 	$AnimationPlayer.play("Open")
