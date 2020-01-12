@@ -1,15 +1,22 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Turret.gd" type="Script" id=1]
 [ext_resource path="res://scenes/turret_bullet.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/Turret/turret_deploy0.png" type="Texture" id=3]
-[ext_resource path="res://assets/Turret/turret_deploy1.png" type="Texture" id=4]
-[ext_resource path="res://assets/Turret/turret_deploy2.png" type="Texture" id=5]
-[ext_resource path="res://assets/Turret/turret_deploy3.png" type="Texture" id=6]
-[ext_resource path="res://assets/Turret/turret_deploy4.png" type="Texture" id=7]
-[ext_resource path="res://assets/Turret/turret_deploy5.png" type="Texture" id=8]
-[ext_resource path="res://assets/Turret/turret_deploy6.png" type="Texture" id=9]
-[ext_resource path="res://assets/Turret/turret_deploy7.png" type="Texture" id=10]
+[ext_resource path="res://assets/Turret/turret_destroy_1.png" type="Texture" id=4]
+[ext_resource path="res://assets/Turret/turret_destroy_2.png" type="Texture" id=5]
+[ext_resource path="res://assets/Turret/turret_destroy_3.png" type="Texture" id=6]
+[ext_resource path="res://assets/Turret/turret_destroy_4.png" type="Texture" id=7]
+[ext_resource path="res://assets/Turret/turret_destroy_5.png" type="Texture" id=8]
+[ext_resource path="res://assets/Turret/turret_destroy_6.png" type="Texture" id=9]
+[ext_resource path="res://assets/Turret/turret_destroy_7.png" type="Texture" id=10]
+[ext_resource path="res://assets/Turret/turret_deploy1.png" type="Texture" id=11]
+[ext_resource path="res://assets/Turret/turret_deploy2.png" type="Texture" id=12]
+[ext_resource path="res://assets/Turret/turret_deploy3.png" type="Texture" id=13]
+[ext_resource path="res://assets/Turret/turret_deploy4.png" type="Texture" id=14]
+[ext_resource path="res://assets/Turret/turret_deploy5.png" type="Texture" id=15]
+[ext_resource path="res://assets/Turret/turret_deploy6.png" type="Texture" id=16]
+[ext_resource path="res://assets/Turret/turret_deploy7.png" type="Texture" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 11.3483 )
@@ -21,7 +28,12 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": false,
+"name": "die",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
 "loop": false,
 "name": "deploy",
 "speed": 10.0
