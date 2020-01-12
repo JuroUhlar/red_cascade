@@ -9,6 +9,7 @@ export var dash_speed_multiplier = 3.0
 export var dash_jump_multiplier = 1.0
 export var dash_cooldown_modulation_color = Color(1,1,1,1)
 export (PackedScene) var player_bullet
+export var hp = 30
 
 var can_jump = true
 var grounded_last_frame
@@ -24,6 +25,7 @@ var dying = false
 
 func _ready():
 	add_to_group("player")
+	add_to_group("damageable")
 
 func _physics_process(delta):	
 	if(dying):
@@ -176,6 +178,11 @@ func die():
 	$Sprite.play("die")
 	yield($Sprite, "animation_finished")
 	$death_timer.start()
+	
+func take_damage(damage):
+	hp -= damage
+	if hp <= 0:
+		die()
 
 func _on_death_timer_timeout():
 	get_tree().reload_current_scene()

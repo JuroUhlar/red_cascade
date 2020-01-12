@@ -25,10 +25,12 @@ func _physics_process(delta):
 				$Sprite.flip_h = true
 				if sign($muzzle_position.position.x) == 1:
 					$muzzle_position.position.x *= -1
+					$gun_timer.start()
 			else:
 				$Sprite.flip_h = false
 				if sign($muzzle_position.position.x) == -1:
 					$muzzle_position.position.x *= -1
+					$gun_timer.start()
 					
 			if $gun_timer.time_left <= 0: 
 				shoot()
@@ -53,8 +55,8 @@ func take_damage(damage):
 		die()
 		
 func die():
-	$CollisionShape2D.disabled = true
 	$CollisionShape2D.scale = Vector2.ZERO
+	$CollisionShape2D.disabled = true
 	dead = true
 	
 
