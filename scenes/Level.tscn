@@ -76,10 +76,9 @@ primary_dialogue_path = NodePath("../CanvasLayer/Dialogue_friend_primary")
 secondary_dialogue_path = NodePath("../CanvasLayer/Dialogue_friend_secondary")
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 250.482, 179.886 )
+position = Vector2( 3582.81, -113.894 )
 
 [node name="Turrets" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Turret3" parent="Turrets" instance=ExtResource( 4 )]
 position = Vector2( 3666.66, -351.99 )
@@ -88,9 +87,10 @@ position = Vector2( 3666.66, -351.99 )
 position = Vector2( 4043.5, -544.62 )
 
 [node name="Turret" parent="Turrets" instance=ExtResource( 4 )]
-position = Vector2( 3831.56, -113.185 )
+position = Vector2( 3838.25, -110.676 )
 
 [node name="Placeholders" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="red_goo" type="TextureRect" parent="Placeholders"]
 margin_left = 3384.75

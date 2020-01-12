@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/player_bullet.tscn" type="PackedScene" id=1]
+
+[node name="turret_bullet" index="0" instance=ExtResource( 1 )]
+position = Vector2( 15.833, 8.31231 )
+collision_layer = 4
+collision_mask = 13
+speed = 200
+
+[node name="Sprite" parent="." index="0"]
+modulate = Color( 1, 0.266667, 0.266667, 1 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+scale = Vector2( 2, 2 )
+
+[node name="lifetime_timer" parent="." index="2"]
+wait_time = 2.0
+
+[node name="VisibilityNotifier2D" parent="." index="3"]
+position = Vector2( -5.05926, -1.78494 )
+scale = Vector2( 0.932337, 0.346945 )
