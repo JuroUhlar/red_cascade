@@ -178,6 +178,8 @@ func _on_enemy_detector_body_entered(body):
 		
 func die():
 	dying = true
+	$CollisionShape2D.disabled = true
+	$CollisionShape2D.scale = Vector2.ZERO
 	$Sprite.play("die")
 	yield($Sprite, "animation_finished")
 	$death_timer.start()

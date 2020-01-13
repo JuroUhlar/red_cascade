@@ -23,8 +23,11 @@ func _physics_process(delta):
 		pass
 	else:
 		_velocity.y += gravity * delta
-		if is_on_wall():
+		if is_on_wall() or ($RayCast_left.is_colliding() and sign(_velocity.x) == 1) or ($RayCast_right.is_colliding() and sign(_velocity.x) == -1):
 			_velocity.x *= -1.0
+			
+			
+			
 		_velocity.y = move_and_slide(_velocity, FLOOR_NORMAL).y
 		
 		if sign(_velocity.x) == 1:

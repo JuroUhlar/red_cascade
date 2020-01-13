@@ -45,15 +45,15 @@ animations = [ {
 "name": "walk",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 18 ) ],
-"loop": true,
-"name": "dormant",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
 "loop": true,
 "name": "spawn",
 "speed": 15.0
+}, {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "dormant",
+"speed": 5.0
 } ]
 
 [sub_resource type="CircleShape2D" id=3]
@@ -89,4 +89,12 @@ visible = false
 self_modulate = Color( 0.945098, 1, 0.278431, 0.309804 )
 scale = Vector2( 1, 1.75 )
 shape = SubResource( 3 )
+
+[node name="RayCast_left" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( -150, 0 )
+
+[node name="RayCast_right" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 150, 0 )
 [connection signal="body_entered" from="player_detector" to="." method="_on_player_detector_body_entered"]

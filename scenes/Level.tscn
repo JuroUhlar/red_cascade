@@ -77,8 +77,7 @@ primary_dialogue_path = NodePath("../CanvasLayer/Dialogue_friend_primary")
 secondary_dialogue_path = NodePath("../CanvasLayer/Dialogue_friend_secondary")
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 4247.63, -545.441 )
-dash_enabled = false
+position = Vector2( 3063.3, -517.349 )
 
 [node name="Turrets" type="Node" parent="."]
 
@@ -205,10 +204,9 @@ margin_bottom = -335.49
 texture = ExtResource( 6 )
 
 [node name="Enemies" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Enemy" parent="Enemies" instance=ExtResource( 7 )]
-position = Vector2( 2849.71, -516.807 )
+position = Vector2( 2799.59, -518.239 )
 
 [node name="Enemy_wall" parent="Enemies" instance=ExtResource( 8 )]
 position = Vector2( 2777.17, -524.005 )
