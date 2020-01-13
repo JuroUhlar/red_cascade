@@ -77,7 +77,7 @@ primary_dialogue_path = NodePath("../CanvasLayer/Dialogue_friend_primary")
 secondary_dialogue_path = NodePath("../CanvasLayer/Dialogue_friend_secondary")
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 3063.3, -517.349 )
+position = Vector2( 2983.5, 28.9913 )
 
 [node name="Turrets" type="Node" parent="."]
 
