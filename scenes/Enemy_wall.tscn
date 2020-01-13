@@ -20,10 +20,11 @@ animations = [ {
 extents = Vector2( 5.80769, 14.8524 )
 
 [node name="Enemy_wall" type="StaticBody2D"]
+collision_layer = 2
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-frame = 4
+frame = 2
 playing = true
 flip_h = true
 
