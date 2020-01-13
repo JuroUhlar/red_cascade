@@ -97,4 +97,8 @@ cast_to = Vector2( -150, 0 )
 [node name="RayCast_right" type="RayCast2D" parent="."]
 enabled = true
 cast_to = Vector2( 150, 0 )
+
+[node name="nav_timer" type="Timer" parent="."]
+wait_time = 0.5
 [connection signal="body_entered" from="player_detector" to="." method="_on_player_detector_body_entered"]
+[connection signal="timeout" from="nav_timer" to="." method="_on_nav_timer_timeout"]

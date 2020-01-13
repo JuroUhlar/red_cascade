@@ -17,13 +17,14 @@ func _ready():
 	else:
 		$Sprite.play("spawn")
 		$CollisionShape2D.scale = Vector2.ONE
+		$nav_timer.start()
 
 func _physics_process(delta):
 	if(dying or !active):
 		pass
 	else:
 		_velocity.y += gravity * delta
-		if is_on_wall() or ($RayCast_left.is_colliding() and sign(_velocity.x) == 1) or ($RayCast_right.is_colliding() and sign(_velocity.x) == -1):
+		if is_on_wall():
 			_velocity.x *= -1.0
 			
 			
@@ -55,8 +56,14 @@ func activate():
 	$Sprite.play("spawn")
 	yield($Sprite, "animation_finished")
 	$CollisionShape2D.scale = Vector2.ONE
+	$nav_timer.start()
 	active = true
 
 func _on_player_detector_body_entered(body):
 	if(!active and body.is_in_group("player")):
 		activate()
+
+
+func _on_nav_timer_timeout():
+	if ($RayCast_left.is_colliding() and sign(_velocity.x) == 1) or ($RayCast_right.is_colliding() and sign(_velocity.x) == -1):
+		_velocity.x *= -1.0
