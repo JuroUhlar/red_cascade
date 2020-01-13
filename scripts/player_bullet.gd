@@ -24,12 +24,15 @@ func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
 
 func _on_player_bullet_body_entered(body):
-	print("Bullet Collision")
-	$CollisionShape2D.disabled = true
-	if(body.is_in_group("damageable")):
-		body.take_damage(damage)
-	$Sprite.play("impact")
-	hit = true
-	
-	yield($Sprite, "animation_finished")
-	queue_free()
+	if(body.is_in_group("dashing")):
+		return
+	else: 
+		print("Bullet Collision")
+		$CollisionShape2D.disabled = true
+		if(body.is_in_group("damageable")):
+			body.take_damage(damage)
+		$Sprite.play("impact")
+		hit = true
+		
+		yield($Sprite, "animation_finished")
+		queue_free()
