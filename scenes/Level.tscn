@@ -77,7 +77,7 @@ primary_dialogue_path = NodePath("../CanvasLayer/Dialogue_friend_primary")
 secondary_dialogue_path = NodePath("../CanvasLayer/Dialogue_friend_secondary")
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 2983.5, 28.9913 )
+position = Vector2( 3029.66, 14.5704 )
 
 [node name="Turrets" type="Node" parent="."]
 
@@ -91,7 +91,6 @@ position = Vector2( 4045.55, -541.54 )
 position = Vector2( 3838.25, -110.676 )
 
 [node name="Placeholders" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="red_goo" type="TextureRect" parent="Placeholders"]
 margin_left = 3384.75
@@ -188,13 +187,6 @@ margin_right = 4144.5
 margin_bottom = -174.501
 text = "Dialogue trigger"
 
-[node name="Dialogue trigger2" type="Label" parent="Placeholders"]
-margin_left = 1959.13
-margin_top = -241.947
-margin_right = 2060.13
-margin_bottom = -227.947
-text = "Dialogue trigger"
-
 [node name="Arrow" type="TextureRect" parent="Placeholders"]
 modulate = Color( 1, 1, 1, 0.278431 )
 margin_left = 3444.12
@@ -257,7 +249,8 @@ position = Vector2( 2706.37, 18.46 )
 
 [node name="Button_fire_suppresion" parent="Objects" instance=ExtResource( 9 )]
 position = Vector2( 1961.56, -240.7 )
-targetPath = NodePath("../Door_back_to_friend")
+toggle = false
+targetPath = NodePath("../../CanvasLayer/Dialogue_water_button")
 
 [node name="Door_back_to_friend" parent="Objects" instance=ExtResource( 10 )]
 position = Vector2( 2122.7, -254.636 )
@@ -283,6 +276,21 @@ avatarTextures = [ ExtResource( 13 ) ]
 visible = false
 texts = [ "Nice! Press [X] to dash. Combine with arrows to dash up or diagonally." ]
 avatarTextures = [ ExtResource( 15 ) ]
+
+[node name="Dialogue_water_button" parent="CanvasLayer" instance=ExtResource( 12 )]
+visible = false
+texts = [ "Activating fire suppresson now.", "Do it!" ]
+end_trigger_target_Path = NodePath("../Dialogue_after_button_pressed")
+
+[node name="Dialogue_after_button_pressed" parent="CanvasLayer" instance=ExtResource( 12 )]
+visible = false
+margin_left = 100.918
+margin_top = 80.4171
+margin_right = -99.0822
+margin_bottom = -29.5829
+texts = [ "It worked!", "*have breathing* *sigh*" ]
+end_trigger_target_Path = NodePath("../../Objects/Door_back_to_friend")
+start_delay = 2
 
 [node name="Trees" type="Node" parent="."]
 editor/display_folded = true
