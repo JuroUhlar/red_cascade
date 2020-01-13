@@ -14,11 +14,7 @@ func _ready():
 func _physics_process(delta):
 	if ($RayCast_left.is_colliding() or $RayCast_right.is_colliding()):
 		if !deployed: 
-			$Sprite.play("deploy")
-			yield($Sprite, "animation_finished")
-			$RayCast_left.cast_to = Vector2(-sensor_range, 0)
-			$RayCast_right.cast_to = Vector2(sensor_range, 0)
-			deployed = true
+			deploy()
 		
 		if deployed and !dead:
 			if $RayCast_left.is_colliding():
@@ -34,9 +30,8 @@ func _physics_process(delta):
 					
 			if $gun_timer.time_left <= 0: 
 				shoot()
-		
-
-	if dead: $Sprite.play("die")
+			
+	if dead: $Sprite.play("die")	
 	elif deployed: $Sprite.play("deploy")
 	
 func shoot():
@@ -48,9 +43,17 @@ func shoot():
 		projectile.set_projectile_direction(-1)
 	get_parent().add_child(projectile)
 	projectile.position = $muzzle_position.global_position
+
+func deploy():
+	$Sprite.play("deploy")
+	yield($Sprite, "animation_finished")
+	$RayCast_left.cast_to = Vector2(-sensor_range, 0)
+	$RayCast_right.cast_to = Vector2(sensor_range, 0)
+	deployed = true
 	
 func take_damage(damage):
 	hp -= damage
+	if !deployed: deploy()
 	if hp <= 0:
 		die()
 		
@@ -58,5 +61,8 @@ func die():
 	$CollisionShape2D.scale = Vector2.ZERO
 	$CollisionShape2D.disabled = true
 	dead = true
+	$Sprite.play("die")
+	yield($Sprite, "animation_finished")
+	queue_free()
 	
 

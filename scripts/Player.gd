@@ -10,6 +10,7 @@ export var dash_jump_multiplier = 1.0
 export var dash_cooldown_modulation_color = Color(1,1,1,1)
 export (PackedScene) var player_bullet
 export var hp = 30
+export var dash_enabled = true
 
 var can_jump = true
 var grounded_last_frame
@@ -52,7 +53,7 @@ func _physics_process(delta):
 		else:
 			running = false	
 	
-		if Input.is_action_just_pressed("dash") and $dash_cooldown.time_left <= 0:
+		if dash_enabled and Input.is_action_just_pressed("dash") and $dash_cooldown.time_left <= 0:
 			dashing = true
 			dashing_direction = get_dash_direction()
 			dashing_velocity = calculate_dash_velocity(dashing_direction, speed, dash_speed_multiplier, dash_jump_multiplier)
@@ -186,3 +187,6 @@ func take_damage(damage):
 
 func _on_death_timer_timeout():
 	get_tree().reload_current_scene()
+	
+func get_dash():
+	dash_enabled = true

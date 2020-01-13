@@ -18,7 +18,7 @@
 [ext_resource path="res://assets/Turret/turret_deploy6.png" type="Texture" id=16]
 [ext_resource path="res://assets/Turret/turret_deploy7.png" type="Texture" id=17]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
@@ -36,7 +36,7 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 10, 11.3483 )
 
 [node name="Turret" type="StaticBody2D"]
@@ -46,7 +46,7 @@ bullet = ExtResource( 2 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.8, 0.8 )
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "idle"
 playing = true
 
@@ -66,4 +66,4 @@ position = Vector2( 14.8867, -10.1081 )
 one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
