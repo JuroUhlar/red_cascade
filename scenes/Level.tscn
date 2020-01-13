@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/0x72_16x16RobotTileset.v1.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Friend.tscn" type="PackedScene" id=2]
@@ -14,7 +14,8 @@
 [ext_resource path="res://scenes/Dialogue.tscn" type="PackedScene" id=12]
 [ext_resource path="res://assets/UI/npc_avatar.png" type="Texture" id=13]
 [ext_resource path="res://assets/UI/avatar.png" type="Texture" id=14]
-[ext_resource path="res://assets/Background/green tree.png" type="Texture" id=15]
+[ext_resource path="res://icon.png" type="Texture" id=15]
+[ext_resource path="res://assets/Background/green tree.png" type="Texture" id=16]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -82,10 +83,10 @@ dash_enabled = false
 [node name="Turrets" type="Node" parent="."]
 
 [node name="Turret3" parent="Turrets" instance=ExtResource( 4 )]
-position = Vector2( 3666.66, -351.99 )
+position = Vector2( 3666.66, -349.629 )
 
 [node name="Turret2" parent="Turrets" instance=ExtResource( 4 )]
-position = Vector2( 4043.5, -544.62 )
+position = Vector2( 4045.55, -541.54 )
 
 [node name="Turret" parent="Turrets" instance=ExtResource( 4 )]
 position = Vector2( 3838.25, -110.676 )
@@ -265,6 +266,7 @@ position = Vector2( 2122.7, -254.636 )
 
 [node name="Dash_upgrade" parent="Objects" instance=ExtResource( 11 )]
 position = Vector2( 4323.36, -544.62 )
+dialog_path = NodePath("../../CanvasLayer/Dash_info")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 pause_mode = 2
@@ -279,190 +281,195 @@ visible = false
 texts = [ "Hurry! Stop the fire!" ]
 avatarTextures = [ ExtResource( 13 ) ]
 
+[node name="Dash_info" parent="CanvasLayer" instance=ExtResource( 12 )]
+visible = false
+texts = [ "Nice! Press [X] to dash. Combine with arrows to dash up or diagonally." ]
+avatarTextures = [ ExtResource( 15 ) ]
+
 [node name="Trees" type="Node" parent="."]
 editor/display_folded = true
 
 [node name="green tree" type="Sprite" parent="Trees"]
 position = Vector2( 1886.59, -254.261 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree9" type="Sprite" parent="Trees"]
 position = Vector2( 1913.06, -133.884 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree19" type="Sprite" parent="Trees"]
 position = Vector2( 2369.99, -338.084 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree28" type="Sprite" parent="Trees"]
 position = Vector2( 2369.99, -338.084 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree29" type="Sprite" parent="Trees"]
 position = Vector2( 2421.43, -340.791 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree30" type="Sprite" parent="Trees"]
 position = Vector2( 2474.68, -339.889 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree31" type="Sprite" parent="Trees"]
 position = Vector2( 2533.34, -339.889 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree32" type="Sprite" parent="Trees"]
 position = Vector2( 2594.71, -340.791 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree33" type="Sprite" parent="Trees"]
 position = Vector2( 2652.47, -339.889 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree34" type="Sprite" parent="Trees"]
 position = Vector2( 2709.33, -339.889 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree35" type="Sprite" parent="Trees"]
 position = Vector2( 2771.6, -338.986 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree36" type="Sprite" parent="Trees"]
 position = Vector2( 2819.43, -336.279 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree37" type="Sprite" parent="Trees"]
 position = Vector2( 2883.51, -334.474 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree2" type="Sprite" parent="Trees"]
 position = Vector2( 1834.91, -254.261 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree8" type="Sprite" parent="Trees"]
 position = Vector2( 1861.38, -133.884 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree16" type="Sprite" parent="Trees"]
 position = Vector2( 2318.31, -338.084 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree23" type="Sprite" parent="Trees"]
 position = Vector2( 2318.31, -338.084 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree3" type="Sprite" parent="Trees"]
 position = Vector2( 1785.75, -253.631 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree10" type="Sprite" parent="Trees"]
 position = Vector2( 1812.22, -133.254 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree21" type="Sprite" parent="Trees"]
 position = Vector2( 2269.15, -337.454 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree27" type="Sprite" parent="Trees"]
 position = Vector2( 2269.15, -337.454 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree4" type="Sprite" parent="Trees"]
 position = Vector2( 1734.07, -253.631 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree11" type="Sprite" parent="Trees"]
 position = Vector2( 1760.54, -133.254 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree17" type="Sprite" parent="Trees"]
 position = Vector2( 2217.47, -337.454 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree26" type="Sprite" parent="Trees"]
 position = Vector2( 2217.47, -337.454 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree5" type="Sprite" parent="Trees"]
 position = Vector2( 1674.83, -254.261 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree14" type="Sprite" parent="Trees"]
 position = Vector2( 1701.3, -133.884 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree15" type="Sprite" parent="Trees"]
 position = Vector2( 2158.23, -338.084 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree24" type="Sprite" parent="Trees"]
 position = Vector2( 2158.23, -338.084 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree6" type="Sprite" parent="Trees"]
 position = Vector2( 1625.04, -256.152 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree12" type="Sprite" parent="Trees"]
 position = Vector2( 1651.51, -135.775 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree20" type="Sprite" parent="Trees"]
 position = Vector2( 2108.44, -339.975 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree22" type="Sprite" parent="Trees"]
 position = Vector2( 2107.53, -339.072 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree7" type="Sprite" parent="Trees"]
 position = Vector2( 1573.99, -255.522 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree13" type="Sprite" parent="Trees"]
 position = Vector2( 1600.46, -135.145 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree18" type="Sprite" parent="Trees"]
 position = Vector2( 2057.39, -339.344 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="green tree25" type="Sprite" parent="Trees"]
 position = Vector2( 2057.39, -339.344 )
 scale = Vector2( 0.552284, 0.484455 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
