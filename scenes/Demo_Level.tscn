@@ -1,37 +1,43 @@
-[gd_scene load_steps=93 format=2]
+[gd_scene load_steps=99 format=2]
 
 [ext_resource path="res://assets/Background/rc-level-demo-preview2.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/Background/forest-fire1.png" type="Texture" id=3]
-[ext_resource path="res://assets/Background/forest-fire2.png" type="Texture" id=4]
-[ext_resource path="res://assets/Background/forest-fire3.png" type="Texture" id=5]
-[ext_resource path="res://assets/Background/forest-fire4.png" type="Texture" id=6]
-[ext_resource path="res://assets/Background/hanging-cable1.png" type="Texture" id=7]
-[ext_resource path="res://assets/Background/hanging-cable2.png" type="Texture" id=8]
-[ext_resource path="res://assets/Background/hanging-cable3.png" type="Texture" id=9]
-[ext_resource path="res://assets/Background/hanging-cable4.png" type="Texture" id=10]
-[ext_resource path="res://assets/Background/hanging-cable5.png" type="Texture" id=11]
-[ext_resource path="res://assets/Background/sparks1.png" type="Texture" id=12]
-[ext_resource path="res://assets/Background/sparks2.png" type="Texture" id=13]
-[ext_resource path="res://assets/Background/sparks3.png" type="Texture" id=14]
-[ext_resource path="res://assets/Background/sparks4.png" type="Texture" id=15]
-[ext_resource path="res://assets/Background/sparks5.png" type="Texture" id=16]
-[ext_resource path="res://assets/Background/sparks6.png" type="Texture" id=17]
-[ext_resource path="res://assets/Background/dripping-goo1.png" type="Texture" id=18]
-[ext_resource path="res://assets/Background/dripping-goo2.png" type="Texture" id=19]
-[ext_resource path="res://assets/Background/dripping-goo3.png" type="Texture" id=20]
-[ext_resource path="res://assets/Background/dripping-goo4.png" type="Texture" id=21]
-[ext_resource path="res://assets/Background/dripping-goo5.png" type="Texture" id=22]
-[ext_resource path="res://assets/Background/dripping-goo6.png" type="Texture" id=23]
-[ext_resource path="res://assets/Background/dripping-goo7.png" type="Texture" id=24]
-[ext_resource path="res://assets/Background/dripping-goo8.png" type="Texture" id=25]
-[ext_resource path="res://assets/Background/floor-goo1.png" type="Texture" id=26]
-[ext_resource path="res://assets/Background/floor-goo2.png" type="Texture" id=27]
-[ext_resource path="res://assets/Background/big-pannel1.png" type="Texture" id=28]
-[ext_resource path="res://assets/Background/big-pannel4.png" type="Texture" id=29]
-[ext_resource path="res://assets/Background/big-pannel3.png" type="Texture" id=30]
-[ext_resource path="res://assets/Background/big-pannel2.png" type="Texture" id=31]
-[ext_resource path="res://assets/Background/big-pannel5.png" type="Texture" id=32]
+[ext_resource path="res://scenes/Enemy_stopper.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/Background/forest-fire1.png" type="Texture" id=4]
+[ext_resource path="res://assets/Background/forest-fire2.png" type="Texture" id=5]
+[ext_resource path="res://assets/Background/forest-fire3.png" type="Texture" id=6]
+[ext_resource path="res://assets/Background/forest-fire4.png" type="Texture" id=7]
+[ext_resource path="res://scenes/Enemy_wall.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Dash_upgrade.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/NPC.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/Enemy.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/Background/hanging-cable1.png" type="Texture" id=12]
+[ext_resource path="res://assets/Background/hanging-cable2.png" type="Texture" id=13]
+[ext_resource path="res://assets/Background/hanging-cable3.png" type="Texture" id=14]
+[ext_resource path="res://assets/Background/hanging-cable4.png" type="Texture" id=15]
+[ext_resource path="res://assets/Background/hanging-cable5.png" type="Texture" id=16]
+[ext_resource path="res://assets/Background/sparks1.png" type="Texture" id=17]
+[ext_resource path="res://assets/Background/sparks2.png" type="Texture" id=18]
+[ext_resource path="res://assets/Background/sparks3.png" type="Texture" id=19]
+[ext_resource path="res://assets/Background/sparks4.png" type="Texture" id=20]
+[ext_resource path="res://assets/Background/sparks5.png" type="Texture" id=21]
+[ext_resource path="res://assets/Background/sparks6.png" type="Texture" id=22]
+[ext_resource path="res://assets/Background/dripping-goo1.png" type="Texture" id=23]
+[ext_resource path="res://assets/Background/dripping-goo2.png" type="Texture" id=24]
+[ext_resource path="res://assets/Background/dripping-goo3.png" type="Texture" id=25]
+[ext_resource path="res://assets/Background/dripping-goo4.png" type="Texture" id=26]
+[ext_resource path="res://assets/Background/dripping-goo5.png" type="Texture" id=27]
+[ext_resource path="res://assets/Background/dripping-goo6.png" type="Texture" id=28]
+[ext_resource path="res://assets/Background/dripping-goo7.png" type="Texture" id=29]
+[ext_resource path="res://assets/Background/dripping-goo8.png" type="Texture" id=30]
+[ext_resource path="res://assets/Background/floor-goo1.png" type="Texture" id=31]
+[ext_resource path="res://assets/Background/floor-goo2.png" type="Texture" id=32]
+[ext_resource path="res://assets/Background/corner-goo.png" type="Texture" id=33]
+[ext_resource path="res://assets/Background/big-pannel1.png" type="Texture" id=34]
+[ext_resource path="res://assets/Background/big-pannel4.png" type="Texture" id=35]
+[ext_resource path="res://assets/Background/big-pannel3.png" type="Texture" id=36]
+[ext_resource path="res://assets/Background/big-pannel2.png" type="Texture" id=37]
+[ext_resource path="res://assets/Background/big-pannel5.png" type="Texture" id=38]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 76, 10 )
@@ -200,7 +206,7 @@ extents = Vector2( 746, 10 )
 
 [sub_resource type="SpriteFrames" id=56]
 animations = [ {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "on_fire",
 "speed": 10.0
@@ -208,7 +214,7 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=57]
 animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
+"frames": [ ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
 "loop": true,
 "name": "cable_hang",
 "speed": 10.0
@@ -216,7 +222,7 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=58]
 animations = [ {
-"frames": [ null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ) ],
+"frames": [ null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
 "loop": true,
 "name": "sparks",
 "speed": 10.0
@@ -224,7 +230,7 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=59]
 animations = [ {
-"frames": [ ExtResource( 18 ), ExtResource( 18 ), ExtResource( 18 ), ExtResource( 18 ), ExtResource( 18 ), ExtResource( 18 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
+"frames": [ ExtResource( 23 ), ExtResource( 23 ), ExtResource( 23 ), ExtResource( 23 ), ExtResource( 23 ), ExtResource( 23 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
 "loop": true,
 "name": "goo_drops",
 "speed": 10.0
@@ -232,7 +238,7 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=60]
 animations = [ {
-"frames": [ ExtResource( 28 ), ExtResource( 28 ), ExtResource( 28 ), ExtResource( 28 ), ExtResource( 28 ), ExtResource( 28 ), ExtResource( 28 ), ExtResource( 28 ), ExtResource( 28 ), ExtResource( 28 ), ExtResource( 28 ), ExtResource( 28 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 31 ), ExtResource( 29 ) ],
+"frames": [ ExtResource( 34 ), ExtResource( 34 ), ExtResource( 34 ), ExtResource( 34 ), ExtResource( 34 ), ExtResource( 34 ), ExtResource( 34 ), ExtResource( 34 ), ExtResource( 34 ), ExtResource( 34 ), ExtResource( 34 ), ExtResource( 34 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 37 ), ExtResource( 35 ) ],
 "loop": true,
 "name": "glitch_pannel",
 "speed": 8.0
@@ -250,9 +256,10 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 2438, 356 )
+position = Vector2( 1187, 1209 )
 
 [node name="Collisions" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Floors" type="StaticBody2D" parent="Collisions"]
 editor/display_folded = true
@@ -260,6 +267,9 @@ editor/display_folded = true
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Collisions/Floors"]
 position = Vector2( 1073, 1339 )
 shape = SubResource( 1 )
+
+[node name="Enemy_stopper" parent="Collisions/Floors/CollisionShape2D2" instance=ExtResource( 3 )]
+position = Vector2( 362, -836 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collisions/Floors"]
 position = Vector2( 530, 1275 )
@@ -581,6 +591,39 @@ __meta__ = {
 "_edit_group_": true
 }
 
+[node name="Enemy_wall" parent="." instance=ExtResource( 8 )]
+position = Vector2( 2769, 512 )
+
+[node name="Dash_upgrade" parent="." instance=ExtResource( 9 )]
+position = Vector2( 3700, 434 )
+
+[node name="NPC" parent="." instance=ExtResource( 10 )]
+position = Vector2( 2969, 1089 )
+
+[node name="Enemy" parent="." instance=ExtResource( 11 )]
+position = Vector2( 2856, 511 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 2447, 383 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 2159, 495 )
+
+[node name="Enemy4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 2026, 495 )
+
+[node name="Enemy5" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1890, 495 )
+
+[node name="Enemy6" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1487, 495 )
+
+[node name="Enemy7" parent="." instance=ExtResource( 11 )]
+position = Vector2( 1604, 767 )
+
+[node name="Enemy8" parent="." instance=ExtResource( 11 )]
+position = Vector2( 2318, 767 )
+
 [node name="Level Details" type="Node" parent="."]
 
 [node name="CableHanging" type="AnimatedSprite" parent="Level Details"]
@@ -588,7 +631,7 @@ position = Vector2( 2175, 737 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
-frame = 10
+frame = 4
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -599,7 +642,7 @@ position = Vector2( 839, 1217 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
-frame = 10
+frame = 4
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -610,7 +653,7 @@ position = Vector2( 2120, 1070 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
-frame = 9
+frame = 3
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -621,7 +664,7 @@ position = Vector2( 3430, 1057 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
-frame = 9
+frame = 3
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -632,7 +675,7 @@ position = Vector2( 2692, 1062 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 33
+frame = 11
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -643,7 +686,7 @@ position = Vector2( 3459, 870 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 1
+frame = 20
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -654,7 +697,42 @@ position = Vector2( 2114, 478 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 24
+frame = 2
+playing = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sparks4" type="AnimatedSprite" parent="Level Details"]
+position = Vector2( 2585, 300 )
+z_index = 1
+frames = SubResource( 58 )
+animation = "sparks"
+frame = 36
+speed_scale = 0.8
+playing = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sparks5" type="AnimatedSprite" parent="Level Details"]
+position = Vector2( 2451, 318 )
+z_index = 1
+frames = SubResource( 58 )
+animation = "sparks"
+frame = 20
+playing = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sparks6" type="AnimatedSprite" parent="Level Details"]
+position = Vector2( 2565, 361 )
+z_index = 1
+frames = SubResource( 58 )
+animation = "sparks"
+frame = 14
+speed_scale = 0.7
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -709,7 +787,43 @@ position = Vector2( 1789, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 3
+frame = 5
+speed_scale = 0.9
+playing = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="DrippingGoo7" type="AnimatedSprite" parent="Level Details"]
+position = Vector2( 2548, 737 )
+z_index = 1
+frames = SubResource( 59 )
+animation = "goo_drops"
+frame = 5
+speed_scale = 0.9
+playing = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="DrippingGoo8" type="AnimatedSprite" parent="Level Details"]
+position = Vector2( 2489, 737 )
+z_index = 1
+frames = SubResource( 59 )
+animation = "goo_drops"
+frame = 2
+playing = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="DrippingGoo9" type="AnimatedSprite" parent="Level Details"]
+position = Vector2( 2470, 737 )
+z_index = 1
+frames = SubResource( 59 )
+animation = "goo_drops"
+frame = 1
+speed_scale = 0.8
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -729,7 +843,7 @@ __meta__ = {
 [node name="FloorGoo_A" type="Sprite" parent="Level Details"]
 position = Vector2( 2038, 399 )
 z_index = 1
-texture = ExtResource( 26 )
+texture = ExtResource( 31 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -737,7 +851,7 @@ __meta__ = {
 [node name="FloorGoo_A4" type="Sprite" parent="Level Details"]
 position = Vector2( 1878, 511 )
 z_index = 1
-texture = ExtResource( 26 )
+texture = ExtResource( 31 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -745,7 +859,7 @@ __meta__ = {
 [node name="FloorGoo_A3" type="Sprite" parent="Level Details"]
 position = Vector2( 1596, 511 )
 z_index = 1
-texture = ExtResource( 26 )
+texture = ExtResource( 31 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -753,7 +867,7 @@ __meta__ = {
 [node name="FloorGoo_A5" type="Sprite" parent="Level Details"]
 position = Vector2( 1788, 783 )
 z_index = 1
-texture = ExtResource( 26 )
+texture = ExtResource( 31 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -761,7 +875,7 @@ __meta__ = {
 [node name="FloorGoo_A2" type="Sprite" parent="Level Details"]
 position = Vector2( 2646, 399 )
 z_index = 1
-texture = ExtResource( 26 )
+texture = ExtResource( 31 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -769,7 +883,7 @@ __meta__ = {
 [node name="FloorGoo_B2" type="Sprite" parent="Level Details"]
 position = Vector2( 2447, 400 )
 z_index = 1
-texture = ExtResource( 27 )
+texture = ExtResource( 32 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -777,7 +891,7 @@ __meta__ = {
 [node name="FloorGoo_B8" type="Sprite" parent="Level Details"]
 position = Vector2( 2909, 528 )
 z_index = 1
-texture = ExtResource( 27 )
+texture = ExtResource( 32 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -785,7 +899,7 @@ __meta__ = {
 [node name="FloorGoo_B3" type="Sprite" parent="Level Details"]
 position = Vector2( 2273, 400 )
 z_index = 1
-texture = ExtResource( 27 )
+texture = ExtResource( 32 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -793,7 +907,7 @@ __meta__ = {
 [node name="FloorGoo_B4" type="Sprite" parent="Level Details"]
 position = Vector2( 2068, 512 )
 z_index = 1
-texture = ExtResource( 27 )
+texture = ExtResource( 32 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -801,7 +915,7 @@ __meta__ = {
 [node name="FloorGoo_B5" type="Sprite" parent="Level Details"]
 position = Vector2( 1533, 448 )
 z_index = 1
-texture = ExtResource( 27 )
+texture = ExtResource( 32 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -809,7 +923,7 @@ __meta__ = {
 [node name="FloorGoo_B7" type="Sprite" parent="Level Details"]
 position = Vector2( 1718, 784 )
 z_index = 1
-texture = ExtResource( 27 )
+texture = ExtResource( 32 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -817,14 +931,30 @@ __meta__ = {
 [node name="FloorGoo_B6" type="Sprite" parent="Level Details"]
 position = Vector2( 1540, 784 )
 z_index = 1
-texture = ExtResource( 27 )
+texture = ExtResource( 32 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Level Details"]
+[node name="CornerGoo" type="Sprite" parent="Level Details"]
+position = Vector2( 1836, 500 )
+z_index = 1
+texture = ExtResource( 33 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CornerGoo2" type="Sprite" parent="Level Details"]
+position = Vector2( 1701, 500 )
+scale = Vector2( -1, 1 )
+z_index = 1
+texture = ExtResource( 33 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BigPannel" type="AnimatedSprite" parent="Level Details"]
 position = Vector2( 2929, 977 )
 frames = SubResource( 60 )
 animation = "glitch_pannel"
-frame = 18
 playing = true

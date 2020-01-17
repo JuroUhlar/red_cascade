@@ -1,13 +1,33 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scripts/Dash_upgrade.gd" type="Script" id=1]
-[ext_resource path="res://assets/Upgrades/lightning.png" type="Texture" id=2]
+[ext_resource path="res://assets/Upgrades/dash-pickup1.png" type="Texture" id=2]
+[ext_resource path="res://assets/Upgrades/dash-pickup2.png" type="Texture" id=3]
+[ext_resource path="res://assets/Upgrades/dash-pickup3.png" type="Texture" id=4]
+[ext_resource path="res://assets/Upgrades/dash-pickup4.png" type="Texture" id=5]
+[ext_resource path="res://assets/Upgrades/dash-pickup5.png" type="Texture" id=6]
+[ext_resource path="res://assets/Upgrades/dash-pickup6.png" type="Texture" id=7]
+[ext_resource path="res://assets/Upgrades/dash-pickup7.png" type="Texture" id=8]
+[ext_resource path="res://assets/Upgrades/dash-pickup8.png" type="Texture" id=9]
+[ext_resource path="res://assets/Upgrades/dash-pickup9.png" type="Texture" id=10]
+[ext_resource path="res://assets/Upgrades/dash-pickup10.png" type="Texture" id=11]
+[ext_resource path="res://assets/Upgrades/dash-pickup11.png" type="Texture" id=12]
+[ext_resource path="res://assets/Upgrades/dash-pickup12.png" type="Texture" id=13]
+[ext_resource path="res://assets/Upgrades/dash-pickup13.png" type="Texture" id=14]
+[ext_resource path="res://assets/Upgrades/dash-pickup14.png" type="Texture" id=15]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5.50983, 6.53874 )
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "dash_pickup",
+"speed": 10.0
+} ]
 
-[sub_resource type="Animation" id=2]
-resource_name = "picked_up"
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 15 )
+
+[sub_resource type="Animation" id=3]
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:modulate")
 tracks/0/interp = 1
@@ -39,12 +59,17 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.1, 0.1 )
-texture = ExtResource( 2 )
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "dash_pickup"
+frame = 8
+playing = true
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Label" type="Label" parent="."]
 visible = false
@@ -58,5 +83,5 @@ align = 1
 autowrap = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/picked_up = SubResource( 2 )
+anims/picked_up = SubResource( 3 )
 [connection signal="body_entered" from="." to="." method="_on_Dash_upgrade_body_entered"]
