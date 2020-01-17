@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/Friend.gd" type="Script" id=1]
 [ext_resource path="res://assets/NPC/npc-idle1.png" type="Texture" id=2]
 [ext_resource path="res://assets/NPC/npc-idle2.png" type="Texture" id=3]
+[ext_resource path="res://assets/UI/button-hint-Y1.png" type="Texture" id=4]
+[ext_resource path="res://assets/UI/button-hint-Y2.png" type="Texture" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -17,6 +19,14 @@ extents = Vector2( 10, 15 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 39, 19 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "interact",
+"speed": 1.0
+} ]
 
 [node name="Friend" type="StaticBody2D"]
 position = Vector2( 36, 27 )
@@ -40,12 +50,11 @@ disabled = true
 [node name="proximity_sensor_collision_shape" type="CollisionShape2D" parent="player_proximity_sensor"]
 shape = SubResource( 3 )
 
-[node name="Hint" type="Label" parent="."]
-margin_left = -21.5
-margin_top = -28.78
-margin_right = 22.5
-margin_bottom = 2.22
-text = "[v] Talk"
-align = 1
+[node name="Hint" type="AnimatedSprite" parent="."]
+frames = SubResource( 4 )
+animation = "interact"
+frame = 1
+playing = true
+offset = Vector2( 0, -30 )
 [connection signal="body_entered" from="player_proximity_sensor" to="." method="_on_player_proximity_sensor_body_entered"]
 [connection signal="body_exited" from="player_proximity_sensor" to="." method="_on_player_proximity_sensor_body_exited"]
