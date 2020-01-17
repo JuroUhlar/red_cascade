@@ -262,7 +262,6 @@ dialog_path = NodePath("../../CanvasLayer/Dash_info")
 
 [node name="Enemy_stopper" parent="Objects" instance=ExtResource( 12 )]
 position = Vector2( 1925.59, -345.286 )
-collision_layer = 16
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 pause_mode = 2
