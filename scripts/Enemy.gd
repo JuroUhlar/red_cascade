@@ -52,8 +52,8 @@ func die():
 
 func activate():
 	$Sprite.play("spawn")
-	if ($AnimationPlayer): $AnimationPlayer.play("spawn")
 	yield($Sprite, "animation_finished")
+	if ($AnimationPlayer): $AnimationPlayer.play("spawn")
 	$CollisionShape2D.scale = Vector2.ONE
 	follow_player()
 	$nav_timer.start()
