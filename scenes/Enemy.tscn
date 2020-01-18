@@ -25,7 +25,7 @@ animation = "dormant"
 playing = true
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
-scale = Vector2( 8.18, 1 )
+visible = false
 rect = Rect2( -80, -80, 160, 160 )
 process_parent = true
 physics_process_parent = true

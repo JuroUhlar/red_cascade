@@ -4,7 +4,8 @@ export var open = false;
 
 func _ready():
 	$AnimationPlayer.root_node = ".."
-	print($AnimationPlayer.root_node)
+	if (open): open()
+	
 	
 
 func activate():

@@ -259,7 +259,6 @@ animations = [ {
 [node name="Node" type="Node"]
 
 [node name="Level" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="LevelSprite" type="Sprite" parent="Level"]
 position = Vector2( 1, 1 )
@@ -601,6 +600,7 @@ __meta__ = {
 position = Vector2( 1929, 617 )
 frames = SubResource( 56 )
 animation = "on_fire"
+frame = 3
 playing = true
 script = ExtResource( 7 )
 __meta__ = {
@@ -615,7 +615,7 @@ position = Vector2( 2175, 737 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
-frame = 7
+frame = 9
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -626,7 +626,7 @@ position = Vector2( 839, 1217 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
-frame = 7
+frame = 9
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -637,7 +637,7 @@ position = Vector2( 2120, 1070 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
-frame = 6
+frame = 8
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -648,7 +648,7 @@ position = Vector2( 3430, 1057 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
-frame = 6
+frame = 8
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -659,7 +659,7 @@ position = Vector2( 2692, 1062 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 1
+frame = 24
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -670,7 +670,7 @@ position = Vector2( 3459, 870 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 10
+frame = 33
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -681,7 +681,7 @@ position = Vector2( 2114, 478 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 33
+frame = 15
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -692,7 +692,7 @@ position = Vector2( 2585, 300 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 8
+frame = 26
 speed_scale = 0.8
 playing = true
 __meta__ = {
@@ -704,7 +704,7 @@ position = Vector2( 2451, 318 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 10
+frame = 33
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -715,7 +715,7 @@ position = Vector2( 2565, 361 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 21
+frame = 37
 speed_scale = 0.7
 playing = true
 __meta__ = {
@@ -727,7 +727,7 @@ position = Vector2( 2281, 430 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 3
+frame = 8
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -738,7 +738,7 @@ position = Vector2( 2072, 430 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 3
+frame = 8
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -749,7 +749,7 @@ position = Vector2( 2461, 257 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 3
+frame = 8
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -760,7 +760,7 @@ position = Vector2( 1484, 478 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 2
+frame = 7
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -771,7 +771,7 @@ position = Vector2( 1789, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 9
+frame = 3
 speed_scale = 0.9
 playing = true
 __meta__ = {
@@ -783,7 +783,7 @@ position = Vector2( 2548, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 9
+frame = 3
 speed_scale = 0.9
 playing = true
 __meta__ = {
@@ -795,7 +795,7 @@ position = Vector2( 2489, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 1
+frame = 6
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -806,7 +806,7 @@ position = Vector2( 2470, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 8
+frame = 6
 speed_scale = 0.8
 playing = true
 __meta__ = {
@@ -818,7 +818,7 @@ position = Vector2( 1539, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 1
+frame = 6
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -941,7 +941,7 @@ __meta__ = {
 position = Vector2( 2929, 977 )
 frames = SubResource( 60 )
 animation = "glitch_pannel"
-frame = 5
+frame = 16
 playing = true
 
 [node name="Enemies" type="Node" parent="."]
@@ -1015,14 +1015,13 @@ primary_dialogue_path = NodePath("../CanvasLayer/Dialogue_friend_primary")
 secondary_dialogue_path = NodePath("../CanvasLayer/Dialogue_friend_secondary")
 
 [node name="Objects" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="DoorButton1" parent="Objects" instance=ExtResource( 42 )]
 position = Vector2( 2113, 1023.29 )
 targetPath = NodePath("../Door1")
 
 [node name="Door_final" parent="Objects" instance=ExtResource( 43 )]
-position = Vector2( 3186.88, 1073.61 )
+position = Vector2( 3154.46, 1072.53 )
 
 [node name="Door1" parent="Objects" instance=ExtResource( 43 )]
 position = Vector2( 2304.97, 1073.63 )
@@ -1089,7 +1088,7 @@ wall_enemies = [ NodePath("Enemy_wall"), NodePath("Enemy_wall2"), NodePath("Enem
 
 [node name="Final_button" parent="Final_scenario_stuff" instance=ExtResource( 42 )]
 position = Vector2( 149.28, -248.918 )
-targetPath = NodePath("../Enemy_spawn_point")
+targetPath = NodePath("..")
 
 [node name="Enemy_wall" parent="Final_scenario_stuff" instance=ExtResource( 36 )]
 position = Vector2( -368.37, -253.827 )
@@ -1106,7 +1105,29 @@ active = false
 wall_on_right = true
 
 [node name="EnemyBoss" parent="Final_scenario_stuff" instance=ExtResource( 49 )]
-death_trigger_target_Paths = [ NodePath("../../Objects/Door_final") ]
+hp = 40
+death_trigger_target_Paths = [ NodePath("../../Objects/Door_final"), NodePath("../Enemy_spawn_point"), NodePath("../upper_spawn_point_trigger") ]
 
 [node name="Enemy_spawn_point" parent="Final_scenario_stuff" instance=ExtResource( 50 )]
-position = Vector2( -377.66, -281.517 )
+position = Vector2( -373.86, -253.018 )
+
+[node name="Enemy_spawn_point2" parent="Final_scenario_stuff" instance=ExtResource( 50 )]
+position = Vector2( 558.397, -382.911 )
+max_enemies = 4
+
+[node name="upper_spawn_point_trigger" parent="Final_scenario_stuff" instance=ExtResource( 44 )]
+position = Vector2( 316.151, -246.35 )
+targetPath = NodePath("../Enemy_spawn_point2")
+triggerable = false
+
+[node name="Door_final_safe" parent="Final_scenario_stuff" instance=ExtResource( 43 )]
+position = Vector2( 770.209, -263.103 )
+open = true
+
+[node name="Trigger" parent="Final_scenario_stuff/Door_final_safe" instance=ExtResource( 44 )]
+position = Vector2( 29.708, 13.7179 )
+targetPath = NodePath("..")
+deactivate = true
+
+[node name="Door_end" parent="Final_scenario_stuff" instance=ExtResource( 43 )]
+position = Vector2( 1459.73, -263.386 )

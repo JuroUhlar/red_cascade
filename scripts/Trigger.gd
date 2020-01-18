@@ -2,6 +2,7 @@ extends Area2D
 
 export (NodePath) var targetPath
 export var deactivate = false
+export var triggerable = true
 var target
 
 func _ready():
@@ -11,8 +12,11 @@ func _ready():
 		target = get_node(targetPath)
 
 func _on_Trigger_body_entered(body):
-	if (body.is_in_group("player")):
+	if (triggerable and body.is_in_group("player")):
 		if(deactivate): target.deactivate()
 		else: target.activate()
 		queue_free()
+		
+func activate():
+	triggerable = true
 	
