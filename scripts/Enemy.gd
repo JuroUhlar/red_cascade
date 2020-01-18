@@ -52,6 +52,7 @@ func die():
 
 func activate():
 	$Sprite.play("spawn")
+	if ($AnimationPlayer): $AnimationPlayer.play("spawn")
 	yield($Sprite, "animation_finished")
 	$CollisionShape2D.scale = Vector2.ONE
 	follow_player()
