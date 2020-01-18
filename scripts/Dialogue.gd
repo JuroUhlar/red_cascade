@@ -2,7 +2,7 @@ extends Control
 
 export (Array, String) var texts = ["default dialogue text 1"]
 export (Array, Texture) var avatarTextures
-export (NodePath) var end_trigger_target_Path
+export (Array, NodePath) var end_trigger_target_Paths
 export var start_delay = 0
 
 
@@ -14,11 +14,12 @@ onready var avatar = get_node("Panel/MarginContainer/VBoxContainer/HBoxContainer
 var dismissable = false
 var lineCount = 1
 var lineIndex = 0
-var target
+var targets = []
 
 func _ready():
-	if (end_trigger_target_Path.is_empty() == false):
-		target = get_node(end_trigger_target_Path)
+	for path in end_trigger_target_Paths:
+		if (path.is_empty() == false):
+			targets.append(get_node(path))
 	lineCount = texts.size()
 	updateDialogue()
 
@@ -69,8 +70,9 @@ func closeDialogue():
 	dismissable = false
 	lineIndex = 0
 	get_tree().paused = false
-	if(target):
-		target.activate()
+	if(targets):
+		for target in targets:
+			target.activate()
 	
 func _on_delay_timer_timeout():
 	start_dialogue()
