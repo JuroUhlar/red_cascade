@@ -67,8 +67,14 @@ func _on_player_detector_body_entered(body):
 		activate()
 		
 func follow_player():
-	if ($RayCast_left.is_colliding() and sign(_velocity.x) == 1) or ($RayCast_right.is_colliding() and sign(_velocity.x) == -1):
-		_velocity.x *= -1.0
+	if ($RayCast_left.is_colliding() and sign(_velocity.x) == 1) :
+		if ($RayCast_left.get_collider().name == "Player"):
+			_velocity.x *= -1.0
+		
+	if ($RayCast_right.is_colliding() and sign(_velocity.x) == -1):
+		if ($RayCast_right.get_collider().name == "Player"):
+			_velocity.x *= -1.0
+		
 
 func _on_nav_timer_timeout():
 	follow_player()

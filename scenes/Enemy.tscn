@@ -44,11 +44,13 @@ shape = SubResource( 2 )
 visible = false
 enabled = true
 cast_to = Vector2( -150, 0 )
+collision_mask = 5
 
 [node name="RayCast_right" type="RayCast2D" parent="."]
 visible = false
 enabled = true
 cast_to = Vector2( 150, 0 )
+collision_mask = 5
 
 [node name="nav_timer" type="Timer" parent="."]
 wait_time = 0.25
