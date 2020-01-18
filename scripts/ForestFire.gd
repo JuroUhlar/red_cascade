@@ -1,5 +1,6 @@
-extends AnimatedSprite
+extends Node2D
 
 func activate():
-	visible = false
+#	visible = false
+	$AnimationPlayer.play("put_out")
 

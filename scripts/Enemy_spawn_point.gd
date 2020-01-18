@@ -7,10 +7,6 @@ var counter = 0
 func activate():
 	$spawn_timer.start()
 	
-
-
-
-
 func _on_spawn_timer_timeout():
 	var enemy = enemy_scene.instance()
 	add_child(enemy)
