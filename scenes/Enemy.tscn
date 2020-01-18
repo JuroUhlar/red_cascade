@@ -85,15 +85,18 @@ scale = Vector2( 1.48, 0.48 )
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_detector"]
+visible = false
 self_modulate = Color( 0.945098, 1, 0.278431, 0.309804 )
 scale = Vector2( 1, 1.75 )
 shape = SubResource( 3 )
 
 [node name="RayCast_left" type="RayCast2D" parent="."]
+visible = false
 enabled = true
 cast_to = Vector2( -150, 0 )
 
 [node name="RayCast_right" type="RayCast2D" parent="."]
+visible = false
 enabled = true
 cast_to = Vector2( 150, 0 )
 
