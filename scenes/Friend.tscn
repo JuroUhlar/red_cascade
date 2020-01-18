@@ -51,6 +51,7 @@ disabled = true
 shape = SubResource( 3 )
 
 [node name="Hint" type="AnimatedSprite" parent="."]
+visible = false
 frames = SubResource( 4 )
 animation = "interact"
 frame = 1

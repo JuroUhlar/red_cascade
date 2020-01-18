@@ -58,8 +58,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 2/shapes = [  ]
 2/z_index = 0
 
-[sub_resource type="StreamTexture" id=4]
-load_path = "res://.import/asf.png-84c0ee994c29d5ca1d033889254a75d3.stex"
+[sub_resource type="StreamTexture" id=3]
 
 [node name="Level" type="Node2D"]
 __meta__ = {
@@ -271,12 +270,12 @@ pause_mode = 2
 [node name="Dialogue_friend_primary" parent="CanvasLayer" instance=ExtResource( 13 )]
 visible = false
 texts = [ "Good to see you buddy! We are fucked!", "[Name]! Are you alright? Your leg...", "Yeah... I am not going anywhere... But you have to. There is fire in the vegetation module.", "I will go activate fire suppression manually.", "Yeah, do that. Lots of things around here run on oxygen. We might already be dead and not even know it.", "I will go fast. Stay on the radio." ]
-avatarTextures = [ SubResource( 4 ), ExtResource( 14 ), SubResource( 4 ), ExtResource( 14 ), SubResource( 4 ), ExtResource( 14 ) ]
+avatarTextures = [ SubResource( 3 ), ExtResource( 14 ), SubResource( 3 ), ExtResource( 14 ), SubResource( 3 ), ExtResource( 14 ) ]
 
 [node name="Dialogue_friend_secondary" parent="CanvasLayer" instance=ExtResource( 13 )]
 visible = false
 texts = [ "Hurry! Stop the fire!" ]
-avatarTextures = [ SubResource( 4 ) ]
+avatarTextures = [ SubResource( 3 ) ]
 
 [node name="Dash_info" parent="CanvasLayer" instance=ExtResource( 13 )]
 visible = false
