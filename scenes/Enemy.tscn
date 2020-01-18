@@ -4,9 +4,9 @@
 [ext_resource path="res://scenes/resources/Enemy_sprite_frames.tres" type="SpriteFrames" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 12.1487, 16.0762 )
+extents = Vector2( 12.1487, 14.0321 )
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=2]
 radius = 89.4891
 
 [node name="Enemy" type="KinematicBody2D"]
@@ -25,7 +25,7 @@ animation = "dormant"
 playing = true
 
 [node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
-visible = false
+scale = Vector2( 8.18, 1 )
 rect = Rect2( -80, -80, 160, 160 )
 process_parent = true
 physics_process_parent = true
@@ -38,7 +38,7 @@ collision_layer = 2
 visible = false
 self_modulate = Color( 0.945098, 1, 0.278431, 0.309804 )
 scale = Vector2( 1, 1.75 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="RayCast_left" type="RayCast2D" parent="."]
 visible = false

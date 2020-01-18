@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=2]
+[gd_scene load_steps=111 format=2]
 
 [ext_resource path="res://assets/Background/rc-level-demo-preview2.png" type="Texture" id=1]
 [ext_resource path="res://assets/Background/red-cascade-initial-room-after-explosion.png" type="Texture" id=2]
@@ -49,6 +49,7 @@
 [ext_resource path="res://assets/UI/avatar.png" type="Texture" id=47]
 [ext_resource path="res://scenes/Final_scenario.gd" type="Script" id=48]
 [ext_resource path="res://scenes/EnemyBoss.tscn" type="PackedScene" id=49]
+[ext_resource path="res://scenes/Enemy_spawn_point.tscn" type="PackedScene" id=50]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 76, 10 )
@@ -600,7 +601,6 @@ __meta__ = {
 position = Vector2( 1929, 617 )
 frames = SubResource( 56 )
 animation = "on_fire"
-frame = 1
 playing = true
 script = ExtResource( 7 )
 __meta__ = {
@@ -615,7 +615,7 @@ position = Vector2( 2175, 737 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
-frame = 2
+frame = 7
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -626,7 +626,7 @@ position = Vector2( 839, 1217 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
-frame = 2
+frame = 7
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -637,7 +637,7 @@ position = Vector2( 2120, 1070 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
-frame = 1
+frame = 6
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -648,7 +648,7 @@ position = Vector2( 3430, 1057 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
-frame = 1
+frame = 6
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -659,7 +659,7 @@ position = Vector2( 2692, 1062 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 38
+frame = 1
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -670,7 +670,7 @@ position = Vector2( 3459, 870 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 6
+frame = 10
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -681,7 +681,7 @@ position = Vector2( 2114, 478 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 29
+frame = 33
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -692,7 +692,7 @@ position = Vector2( 2585, 300 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 7
+frame = 8
 speed_scale = 0.8
 playing = true
 __meta__ = {
@@ -704,7 +704,7 @@ position = Vector2( 2451, 318 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 6
+frame = 10
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -715,7 +715,7 @@ position = Vector2( 2565, 361 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 1
+frame = 21
 speed_scale = 0.7
 playing = true
 __meta__ = {
@@ -727,7 +727,7 @@ position = Vector2( 2281, 430 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 2
+frame = 3
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -738,7 +738,7 @@ position = Vector2( 2072, 430 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 2
+frame = 3
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -749,7 +749,7 @@ position = Vector2( 2461, 257 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 2
+frame = 3
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -760,7 +760,7 @@ position = Vector2( 1484, 478 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 1
+frame = 2
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -771,7 +771,7 @@ position = Vector2( 1789, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 4
+frame = 9
 speed_scale = 0.9
 playing = true
 __meta__ = {
@@ -783,7 +783,7 @@ position = Vector2( 2548, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 4
+frame = 9
 speed_scale = 0.9
 playing = true
 __meta__ = {
@@ -795,6 +795,7 @@ position = Vector2( 2489, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
+frame = 1
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -805,7 +806,7 @@ position = Vector2( 2470, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 1
+frame = 8
 speed_scale = 0.8
 playing = true
 __meta__ = {
@@ -817,6 +818,7 @@ position = Vector2( 1539, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
+frame = 1
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -939,7 +941,7 @@ __meta__ = {
 position = Vector2( 2929, 977 )
 frames = SubResource( 60 )
 animation = "glitch_pannel"
-frame = 12
+frame = 5
 playing = true
 
 [node name="Enemies" type="Node" parent="."]
@@ -994,7 +996,7 @@ position = Vector2( 3138, 643 )
 position = Vector2( 3585, 435 )
 
 [node name="Player" parent="." instance=ExtResource( 38 )]
-position = Vector2( 2480.96, 1082.26 )
+position = Vector2( 2899.47, 1088.25 )
 
 [node name="Dash_upgrade" parent="." instance=ExtResource( 39 )]
 position = Vector2( 3700, 434 )
@@ -1087,7 +1089,7 @@ wall_enemies = [ NodePath("Enemy_wall"), NodePath("Enemy_wall2"), NodePath("Enem
 
 [node name="Final_button" parent="Final_scenario_stuff" instance=ExtResource( 42 )]
 position = Vector2( 149.28, -248.918 )
-targetPath = NodePath("..")
+targetPath = NodePath("../Enemy_spawn_point")
 
 [node name="Enemy_wall" parent="Final_scenario_stuff" instance=ExtResource( 36 )]
 position = Vector2( -368.37, -253.827 )
@@ -1105,3 +1107,6 @@ wall_on_right = true
 
 [node name="EnemyBoss" parent="Final_scenario_stuff" instance=ExtResource( 49 )]
 death_trigger_target_Paths = [ NodePath("../../Objects/Door_final") ]
+
+[node name="Enemy_spawn_point" parent="Final_scenario_stuff" instance=ExtResource( 50 )]
+position = Vector2( -377.66, -281.517 )
