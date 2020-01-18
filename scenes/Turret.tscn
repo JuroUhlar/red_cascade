@@ -52,12 +52,12 @@ playing = true
 
 [node name="RayCast_right" type="RayCast2D" parent="."]
 enabled = true
-cast_to = Vector2( 70, 0 )
+cast_to = Vector2( 120, 0 )
 
 [node name="RayCast_left" type="RayCast2D" parent="."]
 enabled = true
 exclude_parent = false
-cast_to = Vector2( -70, 0 )
+cast_to = Vector2( -120, 0 )
 
 [node name="muzzle_position" type="Position2D" parent="."]
 position = Vector2( 14.8867, -10.1081 )
