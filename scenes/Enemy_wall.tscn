@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://scenes/Enemy_wall.gd" type="Script" id=1]
+[ext_resource path="res://scripts/Enemy_wall.gd" type="Script" id=1]
 [ext_resource path="res://assets/Enemy/enemy-wall1.png" type="Texture" id=2]
 [ext_resource path="res://assets/Enemy/enemy-wall2.png" type="Texture" id=3]
 [ext_resource path="res://assets/Enemy/enemy-wall3.png" type="Texture" id=4]
@@ -34,3 +34,9 @@ flip_h = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -13.6617, 2.65077 )
 shape = SubResource( 2 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( -1.54421, -0.561098 )
+scale = Vector2( 2.62053, 2.66433 )
+process_parent = true
+physics_process_parent = true

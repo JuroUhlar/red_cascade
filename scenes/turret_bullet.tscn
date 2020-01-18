@@ -14,9 +14,6 @@ modulate = Color( 1, 0.266667, 0.266667, 1 )
 [node name="CollisionShape2D" parent="." index="1"]
 scale = Vector2( 2, 2 )
 
-[node name="lifetime_timer" parent="." index="2"]
-wait_time = 2.0
-
 [node name="VisibilityNotifier2D" parent="." index="3"]
 position = Vector2( -5.05926, -1.78494 )
 scale = Vector2( 0.932337, 0.346945 )

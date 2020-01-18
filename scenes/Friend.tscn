@@ -54,8 +54,13 @@ shape = SubResource( 3 )
 visible = false
 frames = SubResource( 4 )
 animation = "interact"
-frame = 1
 playing = true
 offset = Vector2( 0, -30 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( -0.500004, 0.499999 )
+scale = Vector2( 4.05, 2.75 )
+process_parent = true
+physics_process_parent = true
 [connection signal="body_entered" from="player_proximity_sensor" to="." method="_on_player_proximity_sensor_body_entered"]
 [connection signal="body_exited" from="player_proximity_sensor" to="." method="_on_player_proximity_sensor_body_exited"]

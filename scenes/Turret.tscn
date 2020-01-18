@@ -67,3 +67,8 @@ one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( 0.0650902, 1.52106 )
+scale = Vector2( 10.0439, 1.72789 )
+physics_process_parent = true

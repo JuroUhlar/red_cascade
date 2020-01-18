@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/Background/hanging-cable1.png" type="Texture" id=1]
+[ext_resource path="res://assets/Background/hanging-cable2.png" type="Texture" id=2]
+[ext_resource path="res://assets/Background/hanging-cable3.png" type="Texture" id=3]
+[ext_resource path="res://assets/Background/hanging-cable4.png" type="Texture" id=4]
+[ext_resource path="res://assets/Background/hanging-cable5.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "cable_hang",
+"speed": 10.0
+} ]
+
+[node name="CableHanging" type="AnimatedSprite"]
+position = Vector2( 2175, 737 )
+z_index = 1
+frames = SubResource( 1 )
+animation = "cable_hang"
+frame = 7
+playing = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( -2.9198, -3.99561 )
+scale = Vector2( 1.29198, 1.39956 )

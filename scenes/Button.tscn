@@ -40,5 +40,11 @@ margin_right = 41.5579
 margin_bottom = -1.271
 rect_scale = Vector2( 0.5, 0.5 )
 text = "[V] Press"
+
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+position = Vector2( 0.581136, 2.80882 )
+scale = Vector2( 3.03397, 2.73372 )
+process_parent = true
+physics_process_parent = true
 [connection signal="body_entered" from="." to="." method="_on_Button_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Button_body_exited"]
