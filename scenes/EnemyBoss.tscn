@@ -32,16 +32,21 @@ tracks/1/keys = {
 }
 
 [node name="EnemyBoss" index="0" instance=ExtResource( 1 )]
-modulate = Color( 0.913725, 0.360784, 0.360784, 1 )
-scale = Vector2( 1.7, 1.7 )
 hp = 80
 
-[node name="Sprite" parent="." index="1"]
+[node name="Sprite" parent="." index="0"]
 scale = Vector2( 1, 1 )
 frames = ExtResource( 2 )
+animation = "walk"
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2( 0, 3 )
 
 [node name="player_detector" parent="." index="3"]
 visible = false
+
+[node name="CollisionShape2D" parent="player_detector" index="0"]
+visible = true
 
 [node name="RayCast_left" parent="." index="4"]
 visible = true

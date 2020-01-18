@@ -614,7 +614,7 @@ position = Vector2( 2175, 737 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
-frame = 8
+frame = 7
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -625,7 +625,7 @@ position = Vector2( 839, 1217 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
-frame = 8
+frame = 7
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -636,7 +636,7 @@ position = Vector2( 2120, 1070 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
-frame = 7
+frame = 6
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -647,7 +647,7 @@ position = Vector2( 3430, 1057 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
-frame = 7
+frame = 6
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -658,7 +658,7 @@ position = Vector2( 2692, 1062 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 30
+frame = 36
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -669,7 +669,7 @@ position = Vector2( 3459, 870 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 39
+frame = 4
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -680,7 +680,7 @@ position = Vector2( 2114, 478 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 21
+frame = 27
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -691,7 +691,7 @@ position = Vector2( 2585, 300 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 10
+frame = 5
 speed_scale = 0.8
 playing = true
 __meta__ = {
@@ -703,7 +703,7 @@ position = Vector2( 2451, 318 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 39
+frame = 4
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -714,7 +714,7 @@ position = Vector2( 2565, 361 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 9
+frame = 20
 speed_scale = 0.7
 playing = true
 __meta__ = {
@@ -726,7 +726,7 @@ position = Vector2( 2281, 430 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 1
+frame = 5
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -737,7 +737,7 @@ position = Vector2( 2072, 430 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 1
+frame = 5
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -748,7 +748,7 @@ position = Vector2( 2461, 257 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 1
+frame = 5
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -759,6 +759,7 @@ position = Vector2( 1484, 478 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
+frame = 4
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -793,7 +794,7 @@ position = Vector2( 2489, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 13
+frame = 3
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -804,7 +805,7 @@ position = Vector2( 2470, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 7
+frame = 3
 speed_scale = 0.8
 playing = true
 __meta__ = {
@@ -816,7 +817,7 @@ position = Vector2( 1539, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 13
+frame = 3
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -939,11 +940,10 @@ __meta__ = {
 position = Vector2( 2929, 977 )
 frames = SubResource( 60 )
 animation = "glitch_pannel"
-frame = 1
+frame = 7
 playing = true
 
 [node name="Enemies" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Enemy" parent="Enemies" instance=ExtResource( 35 )]
 position = Vector2( 2856, 511 )
@@ -1084,7 +1084,22 @@ position = Vector2( 2711.43, 1336.58 )
 script = ExtResource( 48 )
 enemy_boss_scene = ExtResource( 49 )
 friendPath = NodePath("../Friend")
+wall_enemies = [ NodePath("Enemy_wall"), NodePath("Enemy_wall2"), NodePath("Enemy_wall3") ]
 
 [node name="Final_button" parent="Final_scenario_stuff" instance=ExtResource( 42 )]
-position = Vector2( 158.058, -250.869 )
+position = Vector2( 149.28, -248.918 )
 targetPath = NodePath("..")
+
+[node name="Enemy_wall" parent="Final_scenario_stuff" instance=ExtResource( 36 )]
+position = Vector2( -368.37, -253.827 )
+active = false
+
+[node name="Enemy_wall2" parent="Final_scenario_stuff" instance=ExtResource( 36 )]
+position = Vector2( 436.518, -332.916 )
+active = false
+wall_on_right = true
+
+[node name="Enemy_wall3" parent="Final_scenario_stuff" instance=ExtResource( 36 )]
+position = Vector2( 548.645, -380.819 )
+active = false
+wall_on_right = true

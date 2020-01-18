@@ -58,7 +58,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 2/shapes = [  ]
 2/z_index = 0
 
-[sub_resource type="StreamTexture" id=61]
+[sub_resource type="StreamTexture" id=3]
 
 [node name="Level" type="Node2D"]
 __meta__ = {
@@ -203,7 +203,7 @@ texture = ExtResource( 6 )
 position = Vector2( 2799.59, -518.239 )
 
 [node name="Enemy_wall" parent="Enemies" instance=ExtResource( 8 )]
-position = Vector2( 2777.17, -524.005 )
+position = Vector2( 2782.75, -528.44 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Enemy2" parent="Enemies" instance=ExtResource( 7 )]
@@ -262,12 +262,12 @@ pause_mode = 2
 [node name="Dialogue_friend_primary" parent="CanvasLayer" instance=ExtResource( 13 )]
 visible = false
 texts = [ "Good to see you buddy! We are fucked!", "[Name]! Are you alright? Your leg...", "Yeah... I am not going anywhere... But you have to. There is fire in the vegetation module.", "I will go activate fire suppression manually.", "Yeah, do that. Lots of things around here run on oxygen. We might already be dead and not even know it.", "I will go fast. Stay on the radio." ]
-avatarTextures = [ SubResource( 61 ), ExtResource( 14 ), SubResource( 61 ), ExtResource( 14 ), SubResource( 61 ), ExtResource( 14 ) ]
+avatarTextures = [ SubResource( 3 ), ExtResource( 14 ), SubResource( 3 ), ExtResource( 14 ), SubResource( 3 ), ExtResource( 14 ) ]
 
 [node name="Dialogue_friend_secondary" parent="CanvasLayer" instance=ExtResource( 13 )]
 visible = false
 texts = [ "Hurry! Stop the fire!" ]
-avatarTextures = [ SubResource( 61 ) ]
+avatarTextures = [ SubResource( 3 ) ]
 
 [node name="Dash_info" parent="CanvasLayer" instance=ExtResource( 13 )]
 visible = false
@@ -277,7 +277,6 @@ avatarTextures = [ ExtResource( 15 ) ]
 [node name="Dialogue_water_button" parent="CanvasLayer" instance=ExtResource( 13 )]
 visible = false
 texts = [ "Activating fire suppresson now.", "Do it!" ]
-end_trigger_target_Path = NodePath("../Dialogue_after_button_pressed")
 
 [node name="Dialogue_after_button_pressed" parent="CanvasLayer" instance=ExtResource( 13 )]
 visible = false
@@ -286,7 +285,6 @@ margin_top = 80.4171
 margin_right = -99.0822
 margin_bottom = -29.5829
 texts = [ "It worked!", "*have breathing* *sigh*" ]
-end_trigger_target_Path = NodePath("../../Objects/Door_back_to_friend")
 start_delay = 2
 
 [node name="Trees" type="Node" parent="."]

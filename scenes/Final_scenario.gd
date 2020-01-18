@@ -2,6 +2,7 @@ extends Node2D
 
 export (PackedScene) var enemy_boss_scene
 export (NodePath) var friendPath
+export (Array, NodePath) var wall_enemies
 var friend
 
 func _ready():
@@ -18,5 +19,9 @@ func activate():
 	
 	add_child(enemy_boss)
 	enemy_boss.global_position = friend_position
+	
+	for enemy_path in wall_enemies:
+		var enemy = get_node(enemy_path)
+		enemy.activate()
 	
 
