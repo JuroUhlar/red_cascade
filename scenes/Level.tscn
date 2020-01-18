@@ -58,8 +58,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 2/shapes = [  ]
 2/z_index = 0
 
-[sub_resource type="StreamTexture" id=4]
-load_path = "res://.import/asf.png-84c0ee994c29d5ca1d033889254a75d3.stex"
+[sub_resource type="StreamTexture" id=3]
 
 [node name="Level" type="Node2D"]
 __meta__ = {
@@ -80,7 +79,7 @@ primary_dialogue_path = NodePath("../CanvasLayer/Dialogue_friend_primary")
 secondary_dialogue_path = NodePath("../CanvasLayer/Dialogue_friend_secondary")
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 2961.87, 31.2717 )
+position = Vector2( 3590.19, -128.645 )
 
 [node name="Turrets" type="Node" parent="."]
 
@@ -207,22 +206,6 @@ position = Vector2( 2799.59, -518.239 )
 position = Vector2( 2777.17, -524.005 )
 scale = Vector2( 1.5, 1.5 )
 
-[node name="Enemy4" parent="Enemies" instance=ExtResource( 7 )]
-position = Vector2( 2129.5, -485.266 )
-active = true
-
-[node name="Enemy5" parent="Enemies" instance=ExtResource( 7 )]
-position = Vector2( 2187.51, -485.266 )
-active = true
-
-[node name="Enemy6" parent="Enemies" instance=ExtResource( 7 )]
-position = Vector2( 2258.63, -485.954 )
-active = true
-
-[node name="Enemy7" parent="Enemies" instance=ExtResource( 7 )]
-position = Vector2( 2320.77, -482.96 )
-active = true
-
 [node name="Enemy2" parent="Enemies" instance=ExtResource( 7 )]
 position = Vector2( 2575.78, -628.142 )
 
@@ -237,6 +220,14 @@ position = Vector2( 2513.91, -244.018 )
 
 [node name="Enemy8" parent="Enemies" instance=ExtResource( 7 )]
 position = Vector2( 1721.28, -547.112 )
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 2258.96, -483.335 )
+active = true
+
+[node name="Enemy5" parent="Enemies" instance=ExtResource( 7 )]
+position = Vector2( 2338.4, -486.354 )
+active = true
 
 [node name="Objects" type="Node" parent="."]
 
@@ -271,12 +262,12 @@ pause_mode = 2
 [node name="Dialogue_friend_primary" parent="CanvasLayer" instance=ExtResource( 13 )]
 visible = false
 texts = [ "Good to see you buddy! We are fucked!", "[Name]! Are you alright? Your leg...", "Yeah... I am not going anywhere... But you have to. There is fire in the vegetation module.", "I will go activate fire suppression manually.", "Yeah, do that. Lots of things around here run on oxygen. We might already be dead and not even know it.", "I will go fast. Stay on the radio." ]
-avatarTextures = [ SubResource( 4 ), ExtResource( 14 ), SubResource( 4 ), ExtResource( 14 ), SubResource( 4 ), ExtResource( 14 ) ]
+avatarTextures = [ SubResource( 3 ), ExtResource( 14 ), SubResource( 3 ), ExtResource( 14 ), SubResource( 3 ), ExtResource( 14 ) ]
 
 [node name="Dialogue_friend_secondary" parent="CanvasLayer" instance=ExtResource( 13 )]
 visible = false
 texts = [ "Hurry! Stop the fire!" ]
-avatarTextures = [ SubResource( 4 ) ]
+avatarTextures = [ SubResource( 3 ) ]
 
 [node name="Dash_info" parent="CanvasLayer" instance=ExtResource( 13 )]
 visible = false

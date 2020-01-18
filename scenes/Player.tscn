@@ -23,11 +23,11 @@
 [ext_resource path="res://assets/Player/player-run4.png" type="Texture" id=21]
 [ext_resource path="res://assets/Player/player-run5.png" type="Texture" id=22]
 [ext_resource path="res://assets/Player/player-run6.png" type="Texture" id=23]
-[ext_resource path="res://assets/Player/player-jump2.png" type="Texture" id=24]
-[ext_resource path="res://assets/Player/player-jump3.png" type="Texture" id=25]
-[ext_resource path="res://assets/Player/player-jump4.png" type="Texture" id=26]
-[ext_resource path="res://assets/Player/player-fall3.png" type="Texture" id=27]
-[ext_resource path="res://assets/Player/player-fall2.png" type="Texture" id=28]
+[ext_resource path="res://assets/Player/player-fall3.png" type="Texture" id=24]
+[ext_resource path="res://assets/Player/player-fall2.png" type="Texture" id=25]
+[ext_resource path="res://assets/Player/player-jump2.png" type="Texture" id=26]
+[ext_resource path="res://assets/Player/player-jump3.png" type="Texture" id=27]
+[ext_resource path="res://assets/Player/player-jump4.png" type="Texture" id=28]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10.8078, 15 )
@@ -85,19 +85,19 @@ animations = [ {
 "name": "run",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
-"loop": true,
-"name": "jump",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 27 ), ExtResource( 28 ) ],
+"frames": [ ExtResource( 24 ), ExtResource( 25 ) ],
 "loop": true,
 "name": "fall",
+"speed": 8.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ) ],
+"loop": true,
+"name": "jump",
 "speed": 8.0
 } ]
 
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 103, 84 )
+position = Vector2( 230.252, 136.345 )
 collision_mask = 12
 script = ExtResource( 1 )
 __meta__ = {
@@ -149,12 +149,7 @@ wait_time = 0.05
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
 current = true
-limit_left = 1
-limit_top = 1
-limit_right = 4182
-limit_bottom = 1470
 
 [node name="trail" type="Particles2D" parent="."]
 visible = false
