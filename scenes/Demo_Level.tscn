@@ -47,7 +47,7 @@
 [ext_resource path="res://scenes/Trigger.tscn" type="PackedScene" id=45]
 [ext_resource path="res://scenes/Dialogue.tscn" type="PackedScene" id=46]
 [ext_resource path="res://assets/UI/npc_avatar.png" type="Texture" id=47]
-[ext_resource path="res://assets/UI/dasfsdf.png" type="Texture" id=48]
+[ext_resource path="res://assets/UI/avatar.png" type="Texture" id=48]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 76, 10 )
@@ -257,6 +257,7 @@ animations = [ {
 [node name="Node" type="Node"]
 
 [node name="Level" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="LevelSprite" type="Sprite" parent="Level"]
 position = Vector2( 1, 1 )
@@ -598,7 +599,7 @@ __meta__ = {
 position = Vector2( 1929, 617 )
 frames = SubResource( 56 )
 animation = "on_fire"
-frame = 2
+frame = 3
 playing = true
 script = ExtResource( 7 )
 __meta__ = {
@@ -613,7 +614,7 @@ position = Vector2( 2175, 737 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
-frame = 8
+frame = 5
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -624,7 +625,7 @@ position = Vector2( 839, 1217 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
-frame = 8
+frame = 5
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -635,7 +636,7 @@ position = Vector2( 2120, 1070 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
-frame = 7
+frame = 4
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -646,7 +647,7 @@ position = Vector2( 3430, 1057 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
-frame = 7
+frame = 4
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -657,7 +658,6 @@ position = Vector2( 2692, 1062 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 12
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -668,7 +668,7 @@ position = Vector2( 3459, 870 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 21
+frame = 9
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -679,7 +679,7 @@ position = Vector2( 2114, 478 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 3
+frame = 32
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -690,7 +690,7 @@ position = Vector2( 2585, 300 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 31
+frame = 13
 speed_scale = 0.8
 playing = true
 __meta__ = {
@@ -702,7 +702,7 @@ position = Vector2( 2451, 318 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 21
+frame = 9
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -713,7 +713,7 @@ position = Vector2( 2565, 361 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 7
+frame = 26
 speed_scale = 0.7
 playing = true
 __meta__ = {
@@ -725,7 +725,7 @@ position = Vector2( 2281, 430 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 11
+frame = 4
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -736,7 +736,7 @@ position = Vector2( 2072, 430 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 11
+frame = 4
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -747,7 +747,7 @@ position = Vector2( 2461, 257 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 11
+frame = 4
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -758,7 +758,7 @@ position = Vector2( 1484, 478 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 10
+frame = 3
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -769,7 +769,7 @@ position = Vector2( 1789, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 1
+frame = 2
 speed_scale = 0.9
 playing = true
 __meta__ = {
@@ -781,7 +781,7 @@ position = Vector2( 2548, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 1
+frame = 2
 speed_scale = 0.9
 playing = true
 __meta__ = {
@@ -793,7 +793,7 @@ position = Vector2( 2489, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 9
+frame = 2
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -804,7 +804,7 @@ position = Vector2( 2470, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 12
+frame = 9
 speed_scale = 0.8
 playing = true
 __meta__ = {
@@ -816,7 +816,7 @@ position = Vector2( 1539, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 9
+frame = 2
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -939,7 +939,7 @@ __meta__ = {
 position = Vector2( 2929, 977 )
 frames = SubResource( 60 )
 animation = "glitch_pannel"
-frame = 13
+frame = 14
 playing = true
 
 [node name="Enemies" type="Node" parent="."]
@@ -995,7 +995,7 @@ position = Vector2( 3138, 643 )
 position = Vector2( 3585, 435 )
 
 [node name="EnemyBoss" parent="." instance=ExtResource( 38 )]
-position = Vector2( 2680.98, 1086.19 )
+position = Vector2( 3216.11, 953.427 )
 
 [node name="Player" parent="." instance=ExtResource( 39 )]
 position = Vector2( 2480.96, 1082.26 )
@@ -1017,6 +1017,7 @@ primary_dialogue_path = NodePath("../CanvasLayer/Dialogue_friend_primary")
 secondary_dialogue_path = NodePath("../CanvasLayer/Dialogue_friend_secondary")
 
 [node name="Objects" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="DoorButton1" parent="Objects" instance=ExtResource( 43 )]
 position = Vector2( 2113, 1023.29 )
@@ -1080,3 +1081,5 @@ texts = [ "It worked!", "*have breathing* *sigh*" ]
 avatarTextures = [ ExtResource( 48 ), ExtResource( 47 ) ]
 end_trigger_target_Paths = [ NodePath("../../Objects/Door_back_to_friend") ]
 start_delay = 2
+
+[node name="Final_scenario" type="Node2D" parent="."]
