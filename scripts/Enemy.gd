@@ -4,6 +4,8 @@ export var speed = Vector2(100,200)
 export var hp = 30
 export var active = false
 
+export (Array, NodePath) var death_trigger_target_Paths
+
 var dying = false
 
 func _ready():
@@ -48,6 +50,7 @@ func die():
 	remove_from_group("enemies")
 	$Sprite.play("die")
 	yield($Sprite, "animation_finished")
+	activate_targets()
 	queue_free()
 
 func activate():
@@ -69,4 +72,12 @@ func follow_player():
 
 func _on_nav_timer_timeout():
 	follow_player()
+	
+func activate_targets():
+	var targets = []
+	for path in death_trigger_target_Paths:
+		if (path.is_empty() == false):
+			targets.append(get_node(path))
+	for target in targets:
+		target.activate()
 	
