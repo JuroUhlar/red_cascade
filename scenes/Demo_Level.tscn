@@ -592,14 +592,13 @@ position = Vector2( 1919.67, 611.846 )
 editor/display_folded = true
 
 [node name="CableHanging" parent="Level/Level Details" instance=ExtResource( 4 )]
-frame = 3
 
 [node name="CableHanging2" type="AnimatedSprite" parent="Level/Level Details"]
 position = Vector2( 839, 1217 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
-frame = 3
+frame = 7
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -610,7 +609,7 @@ position = Vector2( 2120, 1070 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
-frame = 2
+frame = 6
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -621,7 +620,7 @@ position = Vector2( 3430, 1057 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
-frame = 2
+frame = 6
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -632,7 +631,7 @@ position = Vector2( 2692, 1062 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 25
+frame = 11
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -643,7 +642,7 @@ position = Vector2( 3459, 870 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 34
+frame = 20
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -654,7 +653,7 @@ position = Vector2( 2114, 478 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 16
+frame = 2
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -665,7 +664,7 @@ position = Vector2( 2585, 300 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 26
+frame = 31
 speed_scale = 0.8
 playing = true
 __meta__ = {
@@ -677,7 +676,7 @@ position = Vector2( 2451, 318 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 34
+frame = 20
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -688,7 +687,7 @@ position = Vector2( 2565, 361 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 38
+frame = 11
 speed_scale = 0.7
 playing = true
 __meta__ = {
@@ -700,7 +699,7 @@ position = Vector2( 2281, 430 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 5
+frame = 9
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -711,7 +710,7 @@ position = Vector2( 2072, 430 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 5
+frame = 9
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -722,7 +721,7 @@ position = Vector2( 2461, 257 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 5
+frame = 9
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -733,7 +732,7 @@ position = Vector2( 1484, 478 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 4
+frame = 8
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -744,7 +743,7 @@ position = Vector2( 1789, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 12
+frame = 2
 speed_scale = 0.9
 playing = true
 __meta__ = {
@@ -756,7 +755,7 @@ position = Vector2( 2548, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 12
+frame = 2
 speed_scale = 0.9
 playing = true
 __meta__ = {
@@ -768,7 +767,7 @@ position = Vector2( 2489, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 3
+frame = 7
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -779,6 +778,7 @@ position = Vector2( 2470, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
+frame = 3
 speed_scale = 0.8
 playing = true
 __meta__ = {
@@ -790,7 +790,7 @@ position = Vector2( 1539, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 3
+frame = 7
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -968,7 +968,7 @@ position = Vector2( 3138, 643 )
 position = Vector2( 3585, 435 )
 
 [node name="Player" parent="." instance=ExtResource( 35 )]
-position = Vector2( 1722.7, 749.836 )
+position = Vector2( 3211.83, 1072.86 )
 
 [node name="Dash_upgrade" parent="." instance=ExtResource( 36 )]
 position = Vector2( 3700, 434 )
