@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=2]
+[gd_scene load_steps=88 format=2]
 
 [ext_resource path="res://assets/Background/rc-level-demo-preview2.png" type="Texture" id=1]
 [ext_resource path="res://scenes/details/ForestFire.tscn" type="PackedScene" id=2]
@@ -16,21 +16,22 @@
 [ext_resource path="res://scenes/Light_red.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/Enemy.tscn" type="PackedScene" id=15]
 [ext_resource path="res://scenes/Enemy_wall.tscn" type="PackedScene" id=16]
-[ext_resource path="res://scenes/Turret.tscn" type="PackedScene" id=17]
-[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=18]
-[ext_resource path="res://scenes/Dash_upgrade.tscn" type="PackedScene" id=19]
-[ext_resource path="res://scenes/Enemy_stopper.tscn" type="PackedScene" id=20]
-[ext_resource path="res://scenes/Friend.tscn" type="PackedScene" id=21]
-[ext_resource path="res://scenes/Button.tscn" type="PackedScene" id=22]
-[ext_resource path="res://scenes/Trigger.tscn" type="PackedScene" id=23]
-[ext_resource path="res://scenes/Dialogue.tscn" type="PackedScene" id=24]
-[ext_resource path="res://assets/UI/npc_avatar.png" type="Texture" id=25]
-[ext_resource path="res://assets/UI/avatar.png" type="Texture" id=26]
-[ext_resource path="res://scenes/End_screen.tscn" type="PackedScene" id=27]
-[ext_resource path="res://assets/UI/Explosion.tscn" type="PackedScene" id=28]
-[ext_resource path="res://scripts/Final_scenario.gd" type="Script" id=29]
-[ext_resource path="res://scenes/EnemyBoss.tscn" type="PackedScene" id=30]
-[ext_resource path="res://scenes/Enemy_spawn_point.tscn" type="PackedScene" id=31]
+[ext_resource path="res://scenes/Death_zone.tscn" type="PackedScene" id=17]
+[ext_resource path="res://scenes/Turret.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/Dash_upgrade.tscn" type="PackedScene" id=20]
+[ext_resource path="res://scenes/Enemy_stopper.tscn" type="PackedScene" id=21]
+[ext_resource path="res://scenes/Friend.tscn" type="PackedScene" id=22]
+[ext_resource path="res://scenes/Button.tscn" type="PackedScene" id=23]
+[ext_resource path="res://scenes/Trigger.tscn" type="PackedScene" id=24]
+[ext_resource path="res://scenes/Dialogue.tscn" type="PackedScene" id=25]
+[ext_resource path="res://assets/UI/npc_avatar.png" type="Texture" id=26]
+[ext_resource path="res://assets/UI/avatar.png" type="Texture" id=27]
+[ext_resource path="res://scenes/End_screen.tscn" type="PackedScene" id=28]
+[ext_resource path="res://assets/UI/Explosion.tscn" type="PackedScene" id=29]
+[ext_resource path="res://scripts/Final_scenario.gd" type="Script" id=30]
+[ext_resource path="res://scenes/EnemyBoss.tscn" type="PackedScene" id=31]
+[ext_resource path="res://scenes/Enemy_spawn_point.tscn" type="PackedScene" id=32]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 76, 10 )
@@ -199,11 +200,12 @@ extents = Vector2( 746, 10 )
 
 [node name="Node" type="Node"]
 __meta__ = {
-"_edit_horizontal_guides_": [  ],
+"_edit_horizontal_guides_": [ 1471.79 ],
 "_edit_vertical_guides_": [ 4201.98 ]
 }
 
 [node name="Level" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="LevelSprite" type="Sprite" parent="Level"]
 position = Vector2( 1, 1 )
@@ -540,13 +542,13 @@ position = Vector2( 1919.67, 611.846 )
 [node name="Level Details" type="Node" parent="Level"]
 
 [node name="CableHanging" parent="Level/Level Details" instance=ExtResource( 3 )]
-frame = 4
+frame = 6
 
 [node name="Sparks" parent="Level/Level Details" instance=ExtResource( 4 )]
-frame = 13
+frame = 21
 
 [node name="DrippingGoo" parent="Level/Level Details" instance=ExtResource( 5 )]
-frame = 11
+frame = 8
 
 [node name="FloorGoo_A" parent="Level/Level Details" instance=ExtResource( 6 )]
 
@@ -555,7 +557,7 @@ frame = 11
 [node name="CornerGoo" parent="Level/Level Details" instance=ExtResource( 8 )]
 
 [node name="BigPannel" parent="Level/Level Details" instance=ExtResource( 9 )]
-frame = 4
+frame = 15
 
 [node name="Explosion_trigger" parent="Level" instance=ExtResource( 10 )]
 trigger_target_Paths = [ NodePath("../../CanvasLayer/Explosion"), NodePath("RoomAfterExplosion"), NodePath("Door_exploded"), NodePath("../Lights/Light_red"), NodePath("../Lights/Light_red2"), NodePath("../Lights/Light_red3") ]
@@ -593,7 +595,6 @@ position = Vector2( 896.543, 1208.84 )
 position = Vector2( 1178.09, 1207.33 )
 
 [node name="Enemies" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="Enemy" parent="Enemies" instance=ExtResource( 15 )]
 position = Vector2( 2856, 511 )
@@ -632,32 +633,35 @@ position = Vector2( 2318, 767 )
 [node name="Enemy_wall" parent="Enemies" instance=ExtResource( 16 )]
 position = Vector2( 2769, 512 )
 
+[node name="Death_zone" parent="Enemies" instance=ExtResource( 17 )]
+position = Vector2( 1409.33, 1462.43 )
+
 [node name="Turrets" type="Node" parent="."]
 editor/display_folded = true
 
-[node name="Turret" parent="Turrets" instance=ExtResource( 17 )]
+[node name="Turret" parent="Turrets" instance=ExtResource( 18 )]
 position = Vector2( 3509, 899 )
 
-[node name="Turret3" parent="Turrets" instance=ExtResource( 17 )]
+[node name="Turret3" parent="Turrets" instance=ExtResource( 18 )]
 position = Vector2( 3138, 643 )
 
-[node name="Turret4" parent="Turrets" instance=ExtResource( 17 )]
+[node name="Turret4" parent="Turrets" instance=ExtResource( 18 )]
 position = Vector2( 3585, 435 )
 
-[node name="Player" parent="." instance=ExtResource( 18 )]
+[node name="Player" parent="." instance=ExtResource( 19 )]
 position = Vector2( 250.887, 1243.81 )
 
-[node name="Dash_upgrade" parent="." instance=ExtResource( 19 )]
+[node name="Dash_upgrade" parent="." instance=ExtResource( 20 )]
 position = Vector2( 3700, 434 )
 dialog_path = NodePath("../CanvasLayer/Dash_info")
 
-[node name="Enemy_stopper" parent="." instance=ExtResource( 20 )]
+[node name="Enemy_stopper" parent="." instance=ExtResource( 21 )]
 position = Vector2( 1435, 503 )
 
-[node name="Enemy_stopper2" parent="." instance=ExtResource( 20 )]
+[node name="Enemy_stopper2" parent="." instance=ExtResource( 21 )]
 position = Vector2( 2406, 775 )
 
-[node name="Friend" parent="." instance=ExtResource( 21 )]
+[node name="Friend" parent="." instance=ExtResource( 22 )]
 position = Vector2( 2968, 1090 )
 collision_layer = 4
 primary_dialogue_path = NodePath("../CanvasLayer/Dialogue_friend_primary")
@@ -671,11 +675,11 @@ position = Vector2( 3154.46, 1072.53 )
 [node name="Door1" parent="Objects" instance=ExtResource( 13 )]
 position = Vector2( 2304.97, 1073.63 )
 
-[node name="DoorButton1" parent="Objects/Door1" instance=ExtResource( 22 )]
+[node name="DoorButton1" parent="Objects/Door1" instance=ExtResource( 23 )]
 position = Vector2( -191.97, -50.34 )
 targetPath = NodePath("..")
 
-[node name="Trigger_close_door1" parent="Objects/Door1" instance=ExtResource( 23 )]
+[node name="Trigger_close_door1" parent="Objects/Door1" instance=ExtResource( 24 )]
 position = Vector2( 144.04, 9.81995 )
 targetPath = NodePath("..")
 deactivate = true
@@ -683,12 +687,12 @@ deactivate = true
 [node name="Door_back_to_friend" parent="Objects" instance=ExtResource( 13 )]
 position = Vector2( 2017.61, 752.886 )
 
-[node name="Button_fire_suppresion" parent="Objects/Door_back_to_friend" instance=ExtResource( 22 )]
+[node name="Button_fire_suppresion" parent="Objects/Door_back_to_friend" instance=ExtResource( 23 )]
 position = Vector2( -89.02, 15.16 )
 toggle = false
 targetPath = NodePath("../../../CanvasLayer/Dialogue_water_button")
 
-[node name="Trigger_close_door2" parent="Objects/Door_back_to_friend" instance=ExtResource( 23 )]
+[node name="Trigger_close_door2" parent="Objects/Door_back_to_friend" instance=ExtResource( 24 )]
 position = Vector2( 269.07, 15.596 )
 targetPath = NodePath("..")
 deactivate = true
@@ -696,50 +700,50 @@ deactivate = true
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 pause_mode = 2
 
-[node name="Dialogue_friend_primary" parent="CanvasLayer" instance=ExtResource( 24 )]
+[node name="Dialogue_friend_primary" parent="CanvasLayer" instance=ExtResource( 25 )]
 visible = false
 texts = [ "Good to see you buddy! We are fucked!", "[Name]! Are you alright? Your leg...", "Yeah... I am not going anywhere... But you have to. There is fire in the vegetation module.", "I will go activate fire suppression manually.", "Yeah, do that. Lots of things around here run on oxygen. We might already be dead and not even know it.", "I will go fast. Stay on the radio." ]
-avatarTextures = [ ExtResource( 25 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 26 ) ]
+avatarTextures = [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 27 ) ]
 
-[node name="Dialogue_friend_secondary" parent="CanvasLayer" instance=ExtResource( 24 )]
+[node name="Dialogue_friend_secondary" parent="CanvasLayer" instance=ExtResource( 25 )]
 visible = false
 texts = [ "Hurry! Stop the fire!" ]
-avatarTextures = [ ExtResource( 25 ) ]
+avatarTextures = [ ExtResource( 26 ) ]
 
-[node name="Dash_info" parent="CanvasLayer" instance=ExtResource( 24 )]
+[node name="Dash_info" parent="CanvasLayer" instance=ExtResource( 25 )]
 visible = false
 texts = [ "Nice! Press [X] to dash. Combine with arrows to dash up or diagonally." ]
-avatarTextures = [ ExtResource( 25 ) ]
+avatarTextures = [ ExtResource( 26 ) ]
 
-[node name="Dialogue_water_button" parent="CanvasLayer" instance=ExtResource( 24 )]
+[node name="Dialogue_water_button" parent="CanvasLayer" instance=ExtResource( 25 )]
 visible = false
 texts = [ "Activating fire suppresson now.", "Do it!" ]
-avatarTextures = [ ExtResource( 26 ), ExtResource( 25 ) ]
+avatarTextures = [ ExtResource( 27 ), ExtResource( 26 ) ]
 end_trigger_target_Paths = [ NodePath("../Dialogue_after_button_pressed"), NodePath("../../Level/Forest_fire") ]
 
-[node name="Dialogue_after_button_pressed" parent="CanvasLayer" instance=ExtResource( 24 )]
+[node name="Dialogue_after_button_pressed" parent="CanvasLayer" instance=ExtResource( 25 )]
 visible = false
 margin_left = 100.918
 margin_top = 80.4171
 margin_right = -99.0822
 margin_bottom = -29.5829
 texts = [ "It worked!", "*have breathing* *sigh*" ]
-avatarTextures = [ ExtResource( 26 ), ExtResource( 25 ) ]
+avatarTextures = [ ExtResource( 27 ), ExtResource( 26 ) ]
 end_trigger_target_Paths = [ NodePath("../../Objects/Door_back_to_friend"), NodePath("../../Final_scenario_stuff") ]
 start_delay = 2
 
-[node name="End_screen" parent="CanvasLayer" instance=ExtResource( 27 )]
+[node name="End_screen" parent="CanvasLayer" instance=ExtResource( 28 )]
 
-[node name="Explosion" parent="CanvasLayer" instance=ExtResource( 28 )]
+[node name="Explosion" parent="CanvasLayer" instance=ExtResource( 29 )]
 
 [node name="Final_scenario_stuff" type="Node2D" parent="."]
 position = Vector2( 2711.43, 1336.58 )
-script = ExtResource( 29 )
+script = ExtResource( 30 )
 enemy_boss_path = NodePath("EnemyBoss")
 friendPath = NodePath("../Friend")
 wall_enemies = [ NodePath("Enemy_wall"), NodePath("Enemy_wall2"), NodePath("Enemy_wall3") ]
 
-[node name="Final_button" parent="Final_scenario_stuff" instance=ExtResource( 22 )]
+[node name="Final_button" parent="Final_scenario_stuff" instance=ExtResource( 23 )]
 position = Vector2( 458.373, -34.1478 )
 targetPath = NodePath("..")
 
@@ -757,18 +761,18 @@ position = Vector2( 548.645, -380.819 )
 active = false
 wall_on_right = true
 
-[node name="EnemyBoss" parent="Final_scenario_stuff" instance=ExtResource( 30 )]
+[node name="EnemyBoss" parent="Final_scenario_stuff" instance=ExtResource( 31 )]
 hp = 40
 death_trigger_target_Paths = [ NodePath("../../Objects/Door_final"), NodePath("../Enemy_spawn_point"), NodePath("../upper_spawn_point_trigger") ]
 
-[node name="Enemy_spawn_point" parent="Final_scenario_stuff" instance=ExtResource( 31 )]
+[node name="Enemy_spawn_point" parent="Final_scenario_stuff" instance=ExtResource( 32 )]
 position = Vector2( -373.86, -253.018 )
 
-[node name="Enemy_spawn_point2" parent="Final_scenario_stuff" instance=ExtResource( 31 )]
+[node name="Enemy_spawn_point2" parent="Final_scenario_stuff" instance=ExtResource( 32 )]
 position = Vector2( 558.397, -382.911 )
 max_enemies = 4
 
-[node name="upper_spawn_point_trigger" parent="Final_scenario_stuff" instance=ExtResource( 23 )]
+[node name="upper_spawn_point_trigger" parent="Final_scenario_stuff" instance=ExtResource( 24 )]
 position = Vector2( 316.151, -246.35 )
 targetPath = NodePath("../Enemy_spawn_point2")
 triggerable = false
@@ -777,7 +781,7 @@ triggerable = false
 position = Vector2( 770.209, -263.103 )
 open = true
 
-[node name="Trigger" parent="Final_scenario_stuff/Door_final_safe" instance=ExtResource( 23 )]
+[node name="Trigger" parent="Final_scenario_stuff/Door_final_safe" instance=ExtResource( 24 )]
 position = Vector2( 29.708, 13.7179 )
 targetPath = NodePath("..")
 deactivate = true
@@ -785,6 +789,6 @@ deactivate = true
 [node name="Door_end" parent="Final_scenario_stuff" instance=ExtResource( 13 )]
 position = Vector2( 1467.69, -263.955 )
 
-[node name="Trigger_fade_to_black" parent="Final_scenario_stuff" instance=ExtResource( 23 )]
+[node name="Trigger_fade_to_black" parent="Final_scenario_stuff" instance=ExtResource( 24 )]
 position = Vector2( 1397.4, -249.043 )
 targetPath = NodePath("../../CanvasLayer/End_screen")
