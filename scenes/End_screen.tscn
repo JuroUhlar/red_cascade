@@ -63,7 +63,7 @@ margin_right = 17.7122
 margin_bottom = 72.3805
 custom_fonts/font = ExtResource( 2 )
 text = "Red Cascade
-Demo over"
+Demo"
 align = 1
 
 [node name="Credits" type="Label" parent="."]

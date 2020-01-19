@@ -10,9 +10,9 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15.8984, 30.1264 )
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ null, ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": false,
 "name": "close",
 "speed": 20.0
@@ -36,5 +36,5 @@ position = Vector2( 0.407241, 2.85077 )
 scale = Vector2( 6.09065, 5.0318 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 2 )
+frames = SubResource( 4 )
 animation = "close"
