@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/light.png-2335ec24ed32e5fe925d233feb1dcfd0.stex"
+path="res://.import/player-game-over-explode8.png-6d05a2906a35f82b24a57df004661073.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Background/light.png"
-dest_files=[ "res://.import/light.png-2335ec24ed32e5fe925d233feb1dcfd0.stex" ]
+source_file="res://assets/Player/player-game-over-explode8.png"
+dest_files=[ "res://.import/player-game-over-explode8.png-6d05a2906a35f82b24a57df004661073.stex" ]
 
 [params]
 
