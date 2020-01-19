@@ -253,7 +253,6 @@ __meta__ = {
 }
 
 [node name="Level" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="LevelSprite" type="Sprite" parent="Level"]
 position = Vector2( 1, 1 )
@@ -598,14 +597,14 @@ position = Vector2( 1919.67, 611.846 )
 editor/display_folded = true
 
 [node name="CableHanging" parent="Level/Level Details" instance=ExtResource( 4 )]
-frame = 1
+frame = 5
 
 [node name="CableHanging2" type="AnimatedSprite" parent="Level/Level Details"]
 position = Vector2( 839, 1217 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
-frame = 1
+frame = 5
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -616,6 +615,7 @@ position = Vector2( 2120, 1070 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
+frame = 4
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -626,6 +626,7 @@ position = Vector2( 3430, 1057 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
+frame = 4
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -636,7 +637,7 @@ position = Vector2( 2692, 1062 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 38
+frame = 32
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -647,7 +648,6 @@ position = Vector2( 3459, 870 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 6
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -658,7 +658,7 @@ position = Vector2( 2114, 478 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 29
+frame = 23
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -669,7 +669,7 @@ position = Vector2( 2585, 300 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 20
+frame = 7
 speed_scale = 0.8
 playing = true
 __meta__ = {
@@ -681,7 +681,6 @@ position = Vector2( 2451, 318 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 6
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -692,7 +691,7 @@ position = Vector2( 2565, 361 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 21
+frame = 25
 speed_scale = 0.7
 playing = true
 __meta__ = {
@@ -704,7 +703,7 @@ position = Vector2( 2281, 430 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 8
+frame = 4
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -715,7 +714,7 @@ position = Vector2( 2072, 430 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 8
+frame = 4
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -726,7 +725,7 @@ position = Vector2( 2461, 257 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 8
+frame = 4
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -737,7 +736,7 @@ position = Vector2( 1484, 478 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 7
+frame = 3
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -748,7 +747,7 @@ position = Vector2( 1789, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 11
+frame = 13
 speed_scale = 0.9
 playing = true
 __meta__ = {
@@ -760,7 +759,7 @@ position = Vector2( 2548, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 11
+frame = 13
 speed_scale = 0.9
 playing = true
 __meta__ = {
@@ -772,7 +771,7 @@ position = Vector2( 2489, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 6
+frame = 2
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -783,7 +782,7 @@ position = Vector2( 2470, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 8
+frame = 2
 speed_scale = 0.8
 playing = true
 __meta__ = {
@@ -795,7 +794,7 @@ position = Vector2( 1539, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 6
+frame = 2
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -918,7 +917,7 @@ __meta__ = {
 position = Vector2( 2929, 977 )
 frames = SubResource( 60 )
 animation = "glitch_pannel"
-frame = 18
+frame = 11
 playing = true
 
 [node name="Enemies" type="Node" parent="."]
@@ -974,7 +973,7 @@ position = Vector2( 3138, 643 )
 position = Vector2( 3585, 435 )
 
 [node name="Player" parent="." instance=ExtResource( 35 )]
-position = Vector2( 3248.02, 1073.26 )
+position = Vector2( 2004.18, 1078.53 )
 
 [node name="Dash_upgrade" parent="." instance=ExtResource( 36 )]
 position = Vector2( 3700, 434 )
@@ -993,6 +992,7 @@ primary_dialogue_path = NodePath("../CanvasLayer/Dialogue_friend_primary")
 secondary_dialogue_path = NodePath("../CanvasLayer/Dialogue_friend_secondary")
 
 [node name="Objects" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="DoorButton1" parent="Objects" instance=ExtResource( 39 )]
 position = Vector2( 2113, 1023.29 )
