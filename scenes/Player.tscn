@@ -150,6 +150,7 @@ autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+limit_right = 4200
 
 [node name="trail" type="Particles2D" parent="."]
 visible = false

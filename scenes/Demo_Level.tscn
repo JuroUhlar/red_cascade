@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=2]
+[gd_scene load_steps=108 format=2]
 
 [ext_resource path="res://assets/Background/rc-level-demo-preview2.png" type="Texture" id=1]
 [ext_resource path="res://assets/Background/red-cascade-initial-room-after-explosion.png" type="Texture" id=2]
@@ -44,9 +44,10 @@
 [ext_resource path="res://scenes/Dialogue.tscn" type="PackedScene" id=42]
 [ext_resource path="res://assets/UI/npc_avatar.png" type="Texture" id=43]
 [ext_resource path="res://assets/UI/avatar.png" type="Texture" id=44]
-[ext_resource path="res://scripts/Final_scenario.gd" type="Script" id=45]
-[ext_resource path="res://scenes/EnemyBoss.tscn" type="PackedScene" id=46]
-[ext_resource path="res://scenes/Enemy_spawn_point.tscn" type="PackedScene" id=47]
+[ext_resource path="res://scenes/End_screen.tscn" type="PackedScene" id=45]
+[ext_resource path="res://scripts/Final_scenario.gd" type="Script" id=46]
+[ext_resource path="res://scenes/EnemyBoss.tscn" type="PackedScene" id=47]
+[ext_resource path="res://scenes/Enemy_spawn_point.tscn" type="PackedScene" id=48]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 76, 10 )
@@ -246,8 +247,13 @@ animations = [ {
 } ]
 
 [node name="Node" type="Node"]
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [ 4201.98 ]
+}
 
 [node name="Level" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="LevelSprite" type="Sprite" parent="Level"]
 position = Vector2( 1, 1 )
@@ -592,14 +598,14 @@ position = Vector2( 1919.67, 611.846 )
 editor/display_folded = true
 
 [node name="CableHanging" parent="Level/Level Details" instance=ExtResource( 4 )]
-frame = 6
+frame = 1
 
 [node name="CableHanging2" type="AnimatedSprite" parent="Level/Level Details"]
 position = Vector2( 839, 1217 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
-frame = 6
+frame = 1
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -610,7 +616,6 @@ position = Vector2( 2120, 1070 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
-frame = 5
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -621,7 +626,6 @@ position = Vector2( 3430, 1057 )
 z_index = 1
 frames = SubResource( 57 )
 animation = "cable_hang"
-frame = 5
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -632,7 +636,7 @@ position = Vector2( 2692, 1062 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 36
+frame = 38
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -643,7 +647,7 @@ position = Vector2( 3459, 870 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 4
+frame = 6
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -654,7 +658,7 @@ position = Vector2( 2114, 478 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 27
+frame = 29
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -665,7 +669,7 @@ position = Vector2( 2585, 300 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 10
+frame = 20
 speed_scale = 0.8
 playing = true
 __meta__ = {
@@ -677,7 +681,7 @@ position = Vector2( 2451, 318 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 4
+frame = 6
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -688,7 +692,7 @@ position = Vector2( 2565, 361 )
 z_index = 1
 frames = SubResource( 58 )
 animation = "sparks"
-frame = 28
+frame = 21
 speed_scale = 0.7
 playing = true
 __meta__ = {
@@ -700,7 +704,7 @@ position = Vector2( 2281, 430 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 2
+frame = 8
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -711,7 +715,7 @@ position = Vector2( 2072, 430 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 2
+frame = 8
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -722,7 +726,7 @@ position = Vector2( 2461, 257 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 2
+frame = 8
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -733,7 +737,7 @@ position = Vector2( 1484, 478 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 1
+frame = 7
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -744,7 +748,7 @@ position = Vector2( 1789, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 12
+frame = 11
 speed_scale = 0.9
 playing = true
 __meta__ = {
@@ -756,7 +760,7 @@ position = Vector2( 2548, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 12
+frame = 11
 speed_scale = 0.9
 playing = true
 __meta__ = {
@@ -768,6 +772,7 @@ position = Vector2( 2489, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
+frame = 6
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -778,7 +783,7 @@ position = Vector2( 2470, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
-frame = 3
+frame = 8
 speed_scale = 0.8
 playing = true
 __meta__ = {
@@ -790,6 +795,7 @@ position = Vector2( 1539, 737 )
 z_index = 1
 frames = SubResource( 59 )
 animation = "goo_drops"
+frame = 6
 playing = true
 __meta__ = {
 "_edit_group_": true
@@ -912,10 +918,11 @@ __meta__ = {
 position = Vector2( 2929, 977 )
 frames = SubResource( 60 )
 animation = "glitch_pannel"
-frame = 11
+frame = 18
 playing = true
 
 [node name="Enemies" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="Enemy" parent="Enemies" instance=ExtResource( 32 )]
 position = Vector2( 2856, 511 )
@@ -967,7 +974,7 @@ position = Vector2( 3138, 643 )
 position = Vector2( 3585, 435 )
 
 [node name="Player" parent="." instance=ExtResource( 35 )]
-position = Vector2( 1903.98, 763.094 )
+position = Vector2( 3248.02, 1073.26 )
 
 [node name="Dash_upgrade" parent="." instance=ExtResource( 36 )]
 position = Vector2( 3700, 434 )
@@ -1050,9 +1057,11 @@ avatarTextures = [ ExtResource( 44 ), ExtResource( 43 ) ]
 end_trigger_target_Paths = [ NodePath("../../Objects/Door_back_to_friend"), NodePath("../../Final_scenario_stuff") ]
 start_delay = 2
 
+[node name="End_screen" parent="CanvasLayer" instance=ExtResource( 45 )]
+
 [node name="Final_scenario_stuff" type="Node2D" parent="."]
 position = Vector2( 2711.43, 1336.58 )
-script = ExtResource( 45 )
+script = ExtResource( 46 )
 enemy_boss_path = NodePath("EnemyBoss")
 friendPath = NodePath("../Friend")
 wall_enemies = [ NodePath("Enemy_wall"), NodePath("Enemy_wall2"), NodePath("Enemy_wall3") ]
@@ -1075,14 +1084,14 @@ position = Vector2( 548.645, -380.819 )
 active = false
 wall_on_right = true
 
-[node name="EnemyBoss" parent="Final_scenario_stuff" instance=ExtResource( 46 )]
+[node name="EnemyBoss" parent="Final_scenario_stuff" instance=ExtResource( 47 )]
 hp = 40
 death_trigger_target_Paths = [ NodePath("../../Objects/Door_final"), NodePath("../Enemy_spawn_point"), NodePath("../upper_spawn_point_trigger") ]
 
-[node name="Enemy_spawn_point" parent="Final_scenario_stuff" instance=ExtResource( 47 )]
+[node name="Enemy_spawn_point" parent="Final_scenario_stuff" instance=ExtResource( 48 )]
 position = Vector2( -373.86, -253.018 )
 
-[node name="Enemy_spawn_point2" parent="Final_scenario_stuff" instance=ExtResource( 47 )]
+[node name="Enemy_spawn_point2" parent="Final_scenario_stuff" instance=ExtResource( 48 )]
 position = Vector2( 558.397, -382.911 )
 max_enemies = 4
 
@@ -1101,4 +1110,8 @@ targetPath = NodePath("..")
 deactivate = true
 
 [node name="Door_end" parent="Final_scenario_stuff" instance=ExtResource( 40 )]
-position = Vector2( 1459.73, -263.386 )
+position = Vector2( 1467.69, -263.955 )
+
+[node name="Trigger_fade_to_black" parent="Final_scenario_stuff" instance=ExtResource( 41 )]
+position = Vector2( 1397.4, -249.043 )
+targetPath = NodePath("../../CanvasLayer/End_screen")
