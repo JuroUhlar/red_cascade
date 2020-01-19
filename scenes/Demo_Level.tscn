@@ -550,14 +550,17 @@ frame = 21
 [node name="DrippingGoo" parent="Level/Level Details" instance=ExtResource( 5 )]
 frame = 8
 
+
 [node name="FloorGoo_A" parent="Level/Level Details" instance=ExtResource( 6 )]
 
 [node name="FloorGoo_B8" parent="Level/Level Details" instance=ExtResource( 7 )]
 
 [node name="CornerGoo" parent="Level/Level Details" instance=ExtResource( 8 )]
 
+
 [node name="BigPannel" parent="Level/Level Details" instance=ExtResource( 9 )]
 frame = 15
+
 
 [node name="Explosion_trigger" parent="Level" instance=ExtResource( 10 )]
 trigger_target_Paths = [ NodePath("../../CanvasLayer/Explosion"), NodePath("RoomAfterExplosion"), NodePath("Door_exploded"), NodePath("../Lights/Light_red"), NodePath("../Lights/Light_red2"), NodePath("../Lights/Light_red3") ]

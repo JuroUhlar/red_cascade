@@ -1,0 +1,145 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://scripts/ControllableEnemy.gd" type="Script" id=1]
+[ext_resource path="res://assets/Enemy/enemy-spawn10.png" type="Texture" id=2]
+[ext_resource path="res://assets/Enemy/enemy-walk1.png" type="Texture" id=3]
+[ext_resource path="res://assets/Enemy/enemy-walk2.png" type="Texture" id=4]
+[ext_resource path="res://assets/Enemy/enemy-walk3.png" type="Texture" id=5]
+[ext_resource path="res://assets/Enemy/enemy-walk4.png" type="Texture" id=6]
+[ext_resource path="res://assets/Enemy/enemy-walk5.png" type="Texture" id=7]
+[ext_resource path="res://assets/Enemy/enemy-walk6.png" type="Texture" id=8]
+[ext_resource path="res://assets/Enemy/enemy-walk7.png" type="Texture" id=9]
+[ext_resource path="res://assets/Enemy/enemy-walk8.png" type="Texture" id=10]
+[ext_resource path="res://assets/Player/player-game-over-explode1.png" type="Texture" id=11]
+[ext_resource path="res://assets/Player/player-game-over-explode2.png" type="Texture" id=12]
+[ext_resource path="res://assets/Player/player-game-over-explode3.png" type="Texture" id=13]
+[ext_resource path="res://assets/Player/player-game-over-explode4.png" type="Texture" id=14]
+[ext_resource path="res://assets/Player/player-game-over-explode5.png" type="Texture" id=15]
+[ext_resource path="res://assets/Player/player-game-over-explode6.png" type="Texture" id=16]
+[ext_resource path="res://assets/Player/player-game-over-explode7.png" type="Texture" id=17]
+[ext_resource path="res://assets/Player/player-game-over-explode8.png" type="Texture" id=18]
+[ext_resource path="res://assets/Player/player-game-over-explode9.png" type="Texture" id=19]
+[ext_resource path="res://assets/Player/player-game-over-explode10.png" type="Texture" id=20]
+[ext_resource path="res://assets/Player/player-game-over-explode11.png" type="Texture" id=21]
+[ext_resource path="res://assets/Player/player-game-over-explode12.png" type="Texture" id=22]
+[ext_resource path="res://assets/Player/player-game-over-explode13.png" type="Texture" id=23]
+[ext_resource path="res://assets/Player/player-game-over-explode14.png" type="Texture" id=24]
+[ext_resource path="res://assets/UI/dialogue_font.tres" type="Theme" id=25]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 17 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "walk",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
+"loop": false,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=4]
+
+[sub_resource type="RectangleShape2D" id=5]
+
+[node name="Node" type="Node"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 480.0
+margin_bottom = 270.0
+color = Color( 0.0588235, 0.00784314, 0.0784314, 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ControllableEnemy" type="KinematicBody2D" parent="."]
+position = Vector2( 239, 140 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ControllableEnemy"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="ControllableEnemy"]
+visible = false
+frames = SubResource( 2 )
+animation = "idle"
+
+[node name="ExplodeDude" type="AnimatedSprite" parent="ControllableEnemy"]
+frames = SubResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="gameover_label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -69.0
+margin_top = 52.0
+margin_right = 1.0
+margin_bottom = 66.0
+rect_scale = Vector2( 2, 2 )
+theme = ExtResource( 25 )
+text = "GAME OVER"
+align = 1
+valign = 1
+
+[node name="cont_label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -143.0
+margin_top = 186.0
+margin_right = -73.0
+margin_bottom = 200.0
+theme = ExtResource( 25 )
+text = "continue"
+align = 1
+valign = 1
+
+[node name="quit_label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 81.0
+margin_top = 186.0
+margin_right = 151.0
+margin_bottom = 200.0
+theme = ExtResource( 25 )
+text = "quit game"
+align = 1
+valign = 1
+
+[node name="Continue" type="Area2D" parent="."]
+position = Vector2( 240, 140 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Continue"]
+position = Vector2( -106, 0 )
+shape = SubResource( 4 )
+
+[node name="Quit" type="Area2D" parent="."]
+position = Vector2( 240, 140 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Quit"]
+position = Vector2( 114, 0 )
+shape = SubResource( 5 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+[connection signal="animation_finished" from="ControllableEnemy/ExplodeDude" to="ControllableEnemy" method="_on_ExplodeDude_animation_finished"]
+[connection signal="body_entered" from="Continue" to="ControllableEnemy" method="_on_Continue_body_entered"]
+[connection signal="body_entered" from="Quit" to="ControllableEnemy" method="_on_Quit_body_entered"]
+[connection signal="timeout" from="Timer" to="ControllableEnemy" method="_on_Timer_timeout"]
